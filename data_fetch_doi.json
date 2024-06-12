@@ -1,0 +1,1662 @@
+{
+    "scopus_info": [
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Nakhon Pathom",
+            "affilname": "Silpakorn University",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "3",
+            "eid": "2-s2.0-85147525266",
+            "prism:coverDate": "2023-03-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85147525266",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Patipan",
+                  "preferred-name": {
+                    "ce:given-name": "Patipan",
+                    "ce:initials": "P.",
+                    "ce:surname": "Watjanapron",
+                    "ce:indexed-name": "Watjanapron P."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "P.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60018809",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60018809"
+                  },
+                  "ce:surname": "Watjanapron",
+                  "@auid": "58093322700",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/58093322700",
+                  "ce:indexed-name": "Watjanapron P."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85147525266"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85147525266&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85147525266&origin=inward"
+              }
+            ],
+            "prism:publicationName": "ICIC Express Letters",
+            "source-id": "17300154986",
+            "citedby-count": "0",
+            "prism:volume": "17",
+            "subtype": "ar",
+            "prism:pageRange": "315-328",
+            "dc:title": "USING DEEP LEARNING MODEL WITH MULTIPLE INPUTS FOR THAI DEFAMATORY TEXT CLASSIFICATION ON PUBLIC FACEBOOK COMMENTS",
+            "prism:endingPage": "328",
+            "openaccess": null,
+            "openaccessFlag": null,
+            "prism:doi": "10.24507/icicel.17.03.315",
+            "prism:issn": "1881803X",
+            "prism:startingPage": "315",
+            "dc:identifier": "SCOPUS_ID:85147525266",
+            "dc:publisher": "ICIC International"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "King Mongkut's University of Technology North Bangkok",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Nakhon Pathom",
+              "affilname": "Silpakorn University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-85187205373",
+            "prism:coverDate": "2023-01-01",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85187205373",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Porawat",
+                  "preferred-name": {
+                    "ce:given-name": "Porawat",
+                    "ce:initials": "P.",
+                    "ce:surname": "Visutsak",
+                    "ce:indexed-name": "Visutsak P."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "P.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60103462",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60103462"
+                  },
+                  "ce:surname": "Visutsak",
+                  "@auid": "34881214100",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/34881214100",
+                  "ce:indexed-name": "Visutsak P."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85187205373"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85187205373&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85187205373&origin=inward"
+              }
+            ],
+            "prism:isbn": "9798350307627",
+            "prism:publicationName": "2023 5th International Conference on Control and Robotics, ICCR 2023",
+            "source-id": "21101206182",
+            "citedby-count": "0",
+            "subtype": "cp",
+            "prism:pageRange": "162-167",
+            "dc:title": "Machine-Learning-Based Profanity Detection and Removal in Cartoons Videos",
+            "prism:endingPage": "167",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1109/ICCR60000.2023.10444852",
+            "prism:startingPage": "162",
+            "dc:identifier": "SCOPUS_ID:85187205373",
+            "dc:publisher": "Institute of Electrical and Electronics Engineers Inc."
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Pathum Thani",
+              "affilname": "Rangsit University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Nontaburi",
+              "affilname": "Thailand Ministry of Public Health",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "eid": "2-s2.0-85140089058",
+            "pubmed-id": "36262015",
+            "prism:coverDate": "2023-01-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85140089058",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Chavalit",
+                  "preferred-name": {
+                    "ce:given-name": "Chavalit",
+                    "ce:initials": "C.",
+                    "ce:surname": "Supsrisunjai",
+                    "ce:indexed-name": "Supsrisunjai C."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "C.",
+                  "@_fa": "true",
+                  "affiliation": [
+                    {
+                      "@id": "60015728",
+                      "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60015728"
+                    },
+                    {
+                      "@id": "60023366",
+                      "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60023366"
+                    }
+                  ],
+                  "ce:degrees": "MD, PhD",
+                  "ce:surname": "Supsrisunjai",
+                  "@auid": "57194196234",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57194196234",
+                  "ce:indexed-name": "Supsrisunjai C."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85140089058"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85140089058&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85140089058&origin=inward"
+              }
+            ],
+            "source-id": "24898",
+            "citedby-count": "2",
+            "prism:volume": "40",
+            "subtype": "ar",
+            "dc:title": "Clinical and molecular characteristics of autosomal recessive congenital ichthyosis in Thailand",
+            "openaccess": "0",
+            "prism:issn": "15251470 07368046",
+            "prism:issueIdentifier": "1",
+            "subtypeDescription": "Article",
+            "prism:publicationName": "Pediatric Dermatology",
+            "prism:pageRange": "107-112",
+            "prism:endingPage": "112",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1111/pde.15156",
+            "prism:startingPage": "107",
+            "dc:identifier": "SCOPUS_ID:85140089058",
+            "dc:publisher": "John Wiley and Sons Inc"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "North Bangkok University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Nakhon Pathom",
+              "affilname": "Silpakorn University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Suan Dusit University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-85132847987",
+            "prism:coverDate": "2022-06-16",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85132847987",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Fuangfar",
+                  "preferred-name": {
+                    "ce:given-name": "Fuangfar",
+                    "ce:initials": "F.",
+                    "ce:surname": "Pensiri",
+                    "ce:indexed-name": "Pensiri F."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "F.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60001477",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60001477"
+                  },
+                  "ce:surname": "Pensiri",
+                  "@auid": "55332272100",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/55332272100",
+                  "ce:indexed-name": "Pensiri F."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85132847987"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85132847987&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85132847987&origin=inward"
+              }
+            ],
+            "prism:isbn": "9780735443396",
+            "prism:publicationName": "AIP Conference Proceedings",
+            "source-id": "26916",
+            "citedby-count": "1",
+            "prism:volume": "2471",
+            "subtype": "cp",
+            "dc:title": "Clustering tourist using DBSCAN algorithm",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1063/5.0082995",
+            "prism:issn": "15517616 0094243X",
+            "article-number": "020002",
+            "dc:identifier": "SCOPUS_ID:85132847987",
+            "dc:publisher": "American Institute of Physics Inc."
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Bangkok",
+            "affilname": "Institute of Dermatology Thailand",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "j",
+            "eid": "2-s2.0-85128327817",
+            "pubmed-id": "35437767",
+            "prism:coverDate": "2022-05-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85128327817",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Purich",
+                  "preferred-name": {
+                    "ce:given-name": "Purich",
+                    "ce:initials": "P.",
+                    "ce:surname": "Kosidcanasap",
+                    "ce:indexed-name": "Kosidcanasap P."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "P.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60031398",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60031398"
+                  },
+                  "ce:surname": "Kosidcanasap",
+                  "@auid": "57577171400",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57577171400",
+                  "ce:indexed-name": "Kosidcanasap P."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85128327817"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85128327817&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85128327817&origin=inward"
+              }
+            ],
+            "source-id": "24261",
+            "citedby-count": "0",
+            "prism:volume": "63",
+            "subtype": "le",
+            "dc:title": "Recurrence of vesicular stage lesions in an adult female patient with incontinentia pigmenti-including molecular analysis",
+            "openaccess": "0",
+            "prism:issn": "14400960 00048380",
+            "prism:issueIdentifier": "2",
+            "subtypeDescription": "Letter",
+            "prism:publicationName": "Australasian Journal of Dermatology",
+            "prism:pageRange": "258-261",
+            "prism:endingPage": "261",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1111/ajd.13837",
+            "prism:startingPage": "258",
+            "dc:identifier": "SCOPUS_ID:85128327817",
+            "dc:publisher": "John Wiley and Sons Inc"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Nakhon Pathom",
+            "affilname": "Silpakorn University",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "2",
+            "eid": "2-s2.0-85134220018",
+            "prism:coverDate": "2022-01-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85134220018",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Pitikan",
+                  "preferred-name": {
+                    "ce:given-name": "Pitikan",
+                    "ce:initials": "P.",
+                    "ce:surname": "Kuntitan",
+                    "ce:indexed-name": "Kuntitan P."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "P.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60018809",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60018809"
+                  },
+                  "ce:surname": "Kuntitan",
+                  "@auid": "57843646700",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57843646700",
+                  "ce:indexed-name": "Kuntitan P."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85134220018"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85134220018&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85134220018&origin=inward"
+              }
+            ],
+            "prism:publicationName": "Current Applied Science and Technology",
+            "source-id": "21100902626",
+            "citedby-count": "5",
+            "prism:volume": "22",
+            "subtype": "ar",
+            "dc:title": "Using Deep Learning for the Image Recognition of Motifs on the Center of Sukhothai Ceramics",
+            "openaccess": "1",
+            "openaccessFlag": "true",
+            "prism:doi": "10.55003/CAST.2022.02.22.002",
+            "prism:issn": "25869396",
+            "dc:identifier": "SCOPUS_ID:85134220018",
+            "dc:publisher": "King Mongkut's Institute of Technology Ladkrabang"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Nakhon Pathom",
+            "affilname": "Silpakorn University",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "6",
+            "eid": "2-s2.0-85106456346",
+            "prism:coverDate": "2021-06-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85106456346",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Saowalak",
+                  "preferred-name": {
+                    "ce:given-name": "Saowalak",
+                    "ce:initials": "S.",
+                    "ce:surname": "Arampongsanuwat",
+                    "ce:indexed-name": "Arampongsanuwat S."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "S.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60018809",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60018809"
+                  },
+                  "ce:surname": "Arampongsanuwat",
+                  "@auid": "54584918100",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/54584918100",
+                  "ce:indexed-name": "Arampongsanuwat S."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85106456346"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85106456346&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85106456346&origin=inward"
+              }
+            ],
+            "prism:publicationName": "ICIC Express Letters",
+            "source-id": "17300154986",
+            "citedby-count": "4",
+            "prism:volume": "15",
+            "subtype": "ar",
+            "prism:pageRange": "649-657",
+            "dc:title": "APPLICATION of DEEP CONVOLUTIONAL NEURAL NETWORKS for MANGOSTEEN RIPENESS CLASSIFICATION",
+            "prism:endingPage": "657",
+            "openaccess": null,
+            "openaccessFlag": null,
+            "prism:doi": "10.24507/icicel.15.06.649",
+            "prism:issn": "1881803X",
+            "prism:startingPage": "649",
+            "dc:identifier": "SCOPUS_ID:85106456346",
+            "dc:publisher": "ICIC International"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "King Mongkut's University of Technology North Bangkok",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Nakhon Pathom",
+              "affilname": "Silpakorn University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-85124662609",
+            "prism:coverDate": "2021-01-01",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85124662609",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Ganlayarat",
+                  "preferred-name": {
+                    "ce:given-name": "Ganlayarat",
+                    "ce:initials": "G.",
+                    "ce:surname": "Bunyakiat",
+                    "ce:indexed-name": "Bunyakiat G."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "G.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60103462",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60103462"
+                  },
+                  "ce:surname": "Bunyakiat",
+                  "@auid": "57454053300",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57454053300",
+                  "ce:indexed-name": "Bunyakiat G."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85124662609"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85124662609&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85124662609&origin=inward"
+              }
+            ],
+            "prism:isbn": "9781665416566",
+            "prism:publicationName": "2021 International Conference on Data Analytics for Business and Industry, ICDABI 2021",
+            "source-id": "21101075989",
+            "citedby-count": "1",
+            "subtype": "cp",
+            "prism:pageRange": "226-229",
+            "dc:title": "Resilience Techniques for an Automatic Car Parking System",
+            "prism:endingPage": "229",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1109/ICDABI53623.2021.9655972",
+            "prism:startingPage": "226",
+            "dc:identifier": "SCOPUS_ID:85124662609",
+            "dc:publisher": "Institute of Electrical and Electronics Engineers Inc."
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "London",
+              "affilname": "King's College London",
+              "affiliation-country": "United Kingdom"
+            },
+            {
+              "affiliation-city": "Nontaburi",
+              "affilname": "Thailand Ministry of Public Health",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "eid": "2-s2.0-85085960398",
+            "pubmed-id": "32097499",
+            "prism:coverDate": "2020-07-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85085960398",
+            "dc:creator": {
+              "author": [
+                {
+                  "preferred-name": {
+                    "ce:given-name": "F. P.C.",
+                    "ce:initials": "F.P.C.",
+                    "ce:surname": "Chiu",
+                    "ce:indexed-name": "Chiu F.P.C."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "F.P.C.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60011520",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60011520"
+                  },
+                  "ce:surname": "Chiu",
+                  "@auid": "57216790316",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57216790316",
+                  "ce:indexed-name": "Chiu F.P.C."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85085960398"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85085960398&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85085960398&origin=inward"
+              }
+            ],
+            "source-id": "24294",
+            "citedby-count": "6",
+            "prism:volume": "45",
+            "subtype": "ar",
+            "dc:title": "Molecular basis and inheritance patterns of amyloidosis cutis dyschromica",
+            "openaccess": "0",
+            "prism:issn": "13652230 03076938",
+            "prism:issueIdentifier": "5",
+            "subtypeDescription": "Article",
+            "prism:publicationName": "Clinical and Experimental Dermatology",
+            "prism:pageRange": "650-653",
+            "prism:endingPage": "653",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1111/ced.14183",
+            "prism:startingPage": "650",
+            "dc:identifier": "SCOPUS_ID:85085960398",
+            "dc:publisher": "Blackwell Publishing Ltd"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "King Mongkut's University of Technology North Bangkok",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Nakhon Pathom",
+              "affilname": "Silpakorn University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Suan Dusit University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-85090187346",
+            "prism:coverDate": "2019-12-21",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85090187346",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Jitdumrong",
+                  "preferred-name": {
+                    "ce:given-name": "Jitdumrong",
+                    "ce:initials": "J.",
+                    "ce:surname": "Preechasuk",
+                    "ce:indexed-name": "Preechasuk J."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "J.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60018809",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60018809"
+                  },
+                  "ce:surname": "Preechasuk",
+                  "@auid": "56028859000",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/56028859000",
+                  "ce:indexed-name": "Preechasuk J."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85090187346"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85090187346&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85090187346&origin=inward"
+              }
+            ],
+            "prism:isbn": "9781450372633",
+            "prism:publicationName": "ACM International Conference Proceeding Series",
+            "source-id": "11600154611",
+            "citedby-count": "20",
+            "subtype": "cp",
+            "prism:pageRange": "82-88",
+            "dc:title": "Image Analysis of Mushroom Types Classification by Convolution Neural Networks",
+            "prism:endingPage": "88",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1145/3375959.3375982",
+            "prism:startingPage": "82",
+            "dc:identifier": "SCOPUS_ID:85090187346",
+            "dc:publisher": "Association for Computing Machinery"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "King Mongkut's University of Technology North Bangkok",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Nakhon Pathom",
+              "affilname": "Silpakorn University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Suan Dusit University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-85077822084",
+            "prism:coverDate": "2019-01-01",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85077822084",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Porawat",
+                  "preferred-name": {
+                    "ce:given-name": "Porawat",
+                    "ce:initials": "P.",
+                    "ce:surname": "Visutsak",
+                    "ce:indexed-name": "Visutsak P."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "P.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60103462",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60103462"
+                  },
+                  "ce:surname": "Visutsak",
+                  "@auid": "34881214100",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/34881214100",
+                  "ce:indexed-name": "Visutsak P."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85077822084"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85077822084&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85077822084&origin=inward"
+              }
+            ],
+            "prism:isbn": "9781510634091",
+            "prism:publicationName": "Proceedings of SPIE - The International Society for Optical Engineering",
+            "source-id": "40067",
+            "citedby-count": "1",
+            "prism:volume": "11321",
+            "subtype": "cp",
+            "dc:title": "Smooth voxel surface for medical volumetric rendering",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1117/12.2549468",
+            "prism:issn": "1996756X 0277786X",
+            "article-number": "113210Y",
+            "dc:identifier": "SCOPUS_ID:85077822084",
+            "dc:publisher": "SPIEspie@spie.org"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Nakhon Pathom",
+            "affilname": "Silpakorn University",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-85016203850",
+            "prism:coverDate": "2017-02-21",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85016203850",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Nipaporn",
+                  "preferred-name": {
+                    "ce:given-name": "Nipaporn",
+                    "ce:initials": "N.",
+                    "ce:surname": "Thessrimuang",
+                    "ce:indexed-name": "Thessrimuang N."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "N.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60018809",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60018809"
+                  },
+                  "ce:surname": "Thessrimuang",
+                  "@auid": "57193741619",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57193741619",
+                  "ce:indexed-name": "Thessrimuang N."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85016203850"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85016203850&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85016203850&origin=inward"
+              }
+            ],
+            "prism:isbn": "9781509044207",
+            "prism:publicationName": "20th International Computer Science and Engineering Conference: Smart Ubiquitos Computing and Knowledge, ICSEC 2016",
+            "source-id": "21100803379",
+            "citedby-count": "2",
+            "subtype": "cp",
+            "dc:title": "Opinion representative of cosmetic products",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1109/ICSEC.2016.7859945",
+            "article-number": "7859945",
+            "dc:identifier": "SCOPUS_ID:85016203850",
+            "dc:publisher": "Institute of Electrical and Electronics Engineers Inc."
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Nontaburi",
+            "affilname": "Thailand Ministry of Public Health",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "j",
+            "eid": "2-s2.0-85019074174",
+            "pubmed-id": "28138050",
+            "prism:coverDate": "2017-01-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/85019074174",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Chavalit",
+                  "preferred-name": {
+                    "ce:given-name": "Chavalit",
+                    "ce:initials": "C.",
+                    "ce:surname": "Supsrisunjai",
+                    "ce:indexed-name": "Supsrisunjai C."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "C.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60015728",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60015728"
+                  },
+                  "ce:surname": "Supsrisunjai",
+                  "@auid": "57194196234",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/57194196234",
+                  "ce:indexed-name": "Supsrisunjai C."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/85019074174"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85019074174&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85019074174&origin=inward"
+              }
+            ],
+            "source-id": "21787",
+            "citedby-count": "10",
+            "prism:volume": "96",
+            "subtype": "ar",
+            "dc:title": "Case report: Disseminated autochthonous dermal leishmaniasis caused by leishmania siamensis (PCM2 Trang) in a patient from central Thailand infected with human immunodeficiency virus",
+            "openaccess": "1",
+            "prism:issn": "00029637",
+            "prism:issueIdentifier": "5",
+            "subtypeDescription": "Article",
+            "prism:publicationName": "American Journal of Tropical Medicine and Hygiene",
+            "prism:pageRange": "1160-1163",
+            "prism:endingPage": "1163",
+            "openaccessFlag": "true",
+            "prism:doi": "10.4269/ajtmh.16-0472",
+            "prism:startingPage": "1160",
+            "dc:identifier": "SCOPUS_ID:85019074174",
+            "dc:publisher": "American Society of Tropical Medicine and Hygiene111 Deer Lake RoadSuite 100,Deerfield, Illinois60015"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Bangkok",
+            "affilname": "National Institute of Development Administration",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "k",
+            "eid": "2-s2.0-84904213624",
+            "prism:coverDate": "2014-01-01",
+            "prism:aggregationType": "Book Series",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/84904213624",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Orawan",
+                  "preferred-name": {
+                    "ce:given-name": "Orawan",
+                    "ce:initials": "O.",
+                    "ce:surname": "Chaowalit",
+                    "ce:indexed-name": "Chaowalit O."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "O.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60001921",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60001921"
+                  },
+                  "ce:surname": "Chaowalit",
+                  "@auid": "36843739500",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/36843739500",
+                  "ce:indexed-name": "Chaowalit O."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/84904213624"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84904213624&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84904213624&origin=inward"
+              }
+            ],
+            "prism:isbn": "9783038351412",
+            "prism:publicationName": "Advanced Materials Research",
+            "source-id": "4700151906",
+            "citedby-count": "3",
+            "prism:volume": "971-973",
+            "subtype": "cp",
+            "prism:pageRange": "2273-2280",
+            "dc:title": "Abstractive thai opinion summarization",
+            "prism:endingPage": "2280",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.4028/www.scientific.net/AMR.971-973.2273",
+            "prism:issn": "16628985 10226680",
+            "prism:startingPage": "2273",
+            "dc:identifier": "SCOPUS_ID:84904213624",
+            "dc:publisher": "Trans Tech Publications Ltdttp@transtec.ch"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Nakhon Pathom",
+            "affilname": "Mahidol University",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "p",
+            "eid": "2-s2.0-84901036000",
+            "prism:coverDate": "2014-01-01",
+            "prism:aggregationType": "Conference Proceeding",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/84901036000",
+            "subtypeDescription": "Conference Paper",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Wachira",
+                  "preferred-name": {
+                    "ce:given-name": "Wachira",
+                    "ce:initials": "W.",
+                    "ce:surname": "Chaowalit",
+                    "ce:indexed-name": "Chaowalit W."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "W.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60012718",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60012718"
+                  },
+                  "ce:surname": "Chaowalit",
+                  "@auid": "56167956700",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/56167956700",
+                  "ce:indexed-name": "Chaowalit W."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/84901036000"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84901036000&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84901036000&origin=inward"
+              }
+            ],
+            "prism:publicationName": "JICTEE 2014 - 4th Joint International Conference on Information and Communication Technology, Electronic and Electrical Engineering",
+            "source-id": "21100314713",
+            "citedby-count": "0",
+            "subtype": "cp",
+            "dc:title": "Investigation to optimize video/audio bandwidth for VDO conferences in Thailand community college using regression and linear programming",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1109/JICTEE.2014.6804079",
+            "article-number": "6804079",
+            "dc:identifier": "SCOPUS_ID:84901036000",
+            "dc:publisher": "IEEE Computer Societyhelp@computer.org"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Faculty of Medicine Siriraj Hospital, Mahidol University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Kasetsart University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "eid": "2-s2.0-84896515299",
+            "pubmed-id": "24492300",
+            "prism:coverDate": "2014-01-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/84896515299",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Ornnuthchar",
+                  "preferred-name": {
+                    "ce:given-name": "Ornnuthchar",
+                    "ce:initials": "O.",
+                    "ce:surname": "Poungpair",
+                    "ce:indexed-name": "Poungpair O."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "O.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60011189",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60011189"
+                  },
+                  "ce:surname": "Poungpair",
+                  "@auid": "26428880100",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/26428880100",
+                  "ce:indexed-name": "Poungpair O."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/84896515299"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84896515299&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84896515299&origin=inward"
+              }
+            ],
+            "source-id": "19700168103",
+            "citedby-count": "12",
+            "prism:volume": "6",
+            "subtype": "ar",
+            "dc:title": "Generation of human single-chain variable fragment antibodies specific to dengue virus non-structural protein 1 that interfere with the virus infectious cycle",
+            "openaccess": "1",
+            "prism:issn": "19420870 19420862",
+            "prism:issueIdentifier": "2",
+            "subtypeDescription": "Article",
+            "prism:publicationName": "mAbs",
+            "prism:pageRange": "474-482",
+            "prism:endingPage": "482",
+            "openaccessFlag": "true",
+            "prism:doi": "10.4161/mabs.27874",
+            "prism:startingPage": "474",
+            "dc:identifier": "SCOPUS_ID:84896515299",
+            "dc:publisher": "Landes Biosciencekmitchell@landesbioscience.com"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Siriraj Hospital",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Division of Pediatric Cardiology",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "e Research &amp; Development Division",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "10",
+            "eid": "2-s2.0-84868206099",
+            "pubmed-id": "22748061",
+            "prism:coverDate": "2012-11-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/84868206099",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Nithima",
+                  "preferred-name": {
+                    "ce:given-name": "Nithima",
+                    "ce:initials": "N.",
+                    "ce:surname": "Chaowalit",
+                    "ce:indexed-name": "Chaowalit N."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "N.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60199575",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60199575"
+                  },
+                  "ce:surname": "Chaowalit",
+                  "@auid": "6508114873",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/6508114873",
+                  "ce:indexed-name": "Chaowalit N."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/84868206099"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84868206099&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84868206099&origin=inward"
+              }
+            ],
+            "prism:publicationName": "Echocardiography",
+            "source-id": "23159",
+            "citedby-count": "11",
+            "prism:volume": "29",
+            "subtype": "ar",
+            "prism:pageRange": "1239-1246",
+            "dc:title": "Echocardiography as a simple initial tool to assess right ventricular dimensions in patients with repaired tetralogy of Fallot before undergoing pulmonary valve replacement: Comparison with cardiovascular magnetic resonance imaging",
+            "prism:endingPage": "1246",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1111/j.1540-8175.2012.01766.x",
+            "prism:issn": "07422822 15408175",
+            "prism:startingPage": "1239",
+            "dc:identifier": "SCOPUS_ID:84868206099"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Bangkok",
+              "affilname": "Faculty of Medicine Siriraj Hospital, Mahidol University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Pathum Thani",
+              "affilname": "Rangsit University",
+              "affiliation-country": "Thailand"
+            },
+            {
+              "affiliation-city": "Pathum Thani",
+              "affilname": "Thailand National Center for Genetic Engineering and Biotechnology",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "eid": "2-s2.0-84862861520",
+            "pubmed-id": "22664104",
+            "prism:coverDate": "2012-06-29",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/84862861520",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Sasiprapa",
+                  "preferred-name": {
+                    "ce:given-name": "Sasiprapa",
+                    "ce:initials": "S.",
+                    "ce:surname": "Khunchai",
+                    "ce:indexed-name": "Khunchai S."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "S.",
+                  "@_fa": "true",
+                  "affiliation": [
+                    {
+                      "@id": "60011189",
+                      "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60011189"
+                    },
+                    {
+                      "@id": "60011189",
+                      "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60011189"
+                    }
+                  ],
+                  "ce:surname": "Khunchai",
+                  "@auid": "55251764400",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/55251764400",
+                  "ce:indexed-name": "Khunchai S."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/84862861520"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84862861520&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84862861520&origin=inward"
+              }
+            ],
+            "source-id": "16845",
+            "pii": "S0006291X12010364",
+            "citedby-count": "24",
+            "prism:volume": "423",
+            "subtype": "ar",
+            "dc:title": "Interaction of dengue virus nonstructural protein 5 with Daxx modulates RANTES production",
+            "openaccess": "0",
+            "prism:issn": "0006291X 10902104",
+            "prism:issueIdentifier": "2",
+            "subtypeDescription": "Article",
+            "prism:publicationName": "Biochemical and Biophysical Research Communications",
+            "prism:pageRange": "398-403",
+            "prism:endingPage": "403",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1016/j.bbrc.2012.05.137",
+            "prism:startingPage": "398",
+            "dc:identifier": "SCOPUS_ID:84862861520"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Banda Aceh",
+              "affilname": "Universitas Syiah Kuala",
+              "affiliation-country": "Indonesia"
+            },
+            {
+              "affiliation-city": "Hatyai",
+              "affilname": "Prince of Songkla University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "2",
+            "eid": "2-s2.0-79956368745",
+            "prism:coverDate": "2011-05-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/79956368745",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Cut",
+                  "preferred-name": {
+                    "ce:given-name": "Cut",
+                    "ce:initials": "C.",
+                    "ce:surname": "Husna",
+                    "ce:indexed-name": "Husna C."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "C.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60069406",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60069406"
+                  },
+                  "ce:surname": "Husna",
+                  "@auid": "37077090400",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/37077090400",
+                  "ce:indexed-name": "Husna C."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/79956368745"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=79956368745&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=79956368745&origin=inward"
+              }
+            ],
+            "prism:publicationName": "Australasian Emergency Nursing Journal",
+            "source-id": "4200151401",
+            "pii": "S157462671000443X",
+            "citedby-count": "14",
+            "prism:volume": "14",
+            "subtype": "ar",
+            "prism:pageRange": "95-102",
+            "dc:title": "Do knowledge and clinical experience have specific roles in perceived clinical skills for tsunami care among nurses in Banda Aceh, Indonesia?",
+            "prism:endingPage": "102",
+            "openaccess": "0",
+            "openaccessFlag": "false",
+            "prism:doi": "10.1016/j.aenj.2010.12.001",
+            "prism:issn": "15746267",
+            "prism:startingPage": "95",
+            "dc:identifier": "SCOPUS_ID:79956368745"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": {
+            "affiliation-city": "Bangkok",
+            "affilname": "Siriraj Hospital",
+            "affiliation-country": "Thailand"
+          },
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "2",
+            "eid": "2-s2.0-79952658675",
+            "pubmed-id": "21418744",
+            "prism:coverDate": "2011-03-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/79952658675",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "ce:given-name": "Krittapoom",
+                  "preferred-name": {
+                    "ce:given-name": "Krittapoom",
+                    "ce:initials": "K.",
+                    "ce:surname": "Akrawinthawong",
+                    "ce:indexed-name": "Akrawinthawong K."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "K.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60199575",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60199575"
+                  },
+                  "ce:surname": "Akrawinthawong",
+                  "@auid": "36717385900",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/36717385900",
+                  "ce:indexed-name": "Akrawinthawong K."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/79952658675"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=79952658675&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=79952658675&origin=inward"
+              }
+            ],
+            "prism:publicationName": "Hematology",
+            "source-id": "24995",
+            "citedby-count": "19",
+            "prism:volume": "16",
+            "subtype": "ar",
+            "prism:pageRange": "113-122",
+            "dc:title": "Effectiveness of deferiprone in transfusionindependent beta-thalassemia/HbE patients",
+            "prism:endingPage": "122",
+            "openaccess": "1",
+            "openaccessFlag": "true",
+            "prism:doi": "10.1179/102453311X12940641877768",
+            "prism:issn": "10245332 16078454",
+            "prism:startingPage": "113",
+            "dc:identifier": "SCOPUS_ID:79952658675"
+          }
+        }
+      },
+      {
+        "abstracts-retrieval-response": {
+          "affiliation": [
+            {
+              "affiliation-city": "Banda Aceh",
+              "affilname": "Universitas Syiah Kuala",
+              "affiliation-country": "Indonesia"
+            },
+            {
+              "affiliation-city": "Hatyai",
+              "affilname": "Prince of Songkla University",
+              "affiliation-country": "Thailand"
+            }
+          ],
+          "coredata": {
+            "srctype": "j",
+            "prism:issueIdentifier": "1",
+            "eid": "2-s2.0-79951682125",
+            "prism:coverDate": "2011-02-01",
+            "prism:aggregationType": "Journal",
+            "prism:url": "https://api.elsevier.com/content/abstract/scopus_id/79951682125",
+            "subtypeDescription": "Article",
+            "dc:creator": {
+              "author": [
+                {
+                  "preferred-name": {
+                    "ce:given-name": "M. N.S.",
+                    "ce:initials": "M.N.S.",
+                    "ce:surname": "Rachmalia",
+                    "ce:indexed-name": "Rachmalia M."
+                  },
+                  "@seq": "1",
+                  "ce:initials": "M.N.S.",
+                  "@_fa": "true",
+                  "affiliation": {
+                    "@id": "60069406",
+                    "@href": "https://api.elsevier.com/content/affiliation/affiliation_id/60069406"
+                  },
+                  "ce:surname": "Rachmalia",
+                  "@auid": "36982196900",
+                  "author-url": "https://api.elsevier.com/content/author/author_id/36982196900",
+                  "ce:indexed-name": "Rachmalia M.N.S."
+                }
+              ]
+            },
+            "link": [
+              {
+                "@_fa": "true",
+                "@rel": "self",
+                "@href": "https://api.elsevier.com/content/abstract/scopus_id/79951682125"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus",
+                "@href": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=79951682125&origin=inward"
+              },
+              {
+                "@_fa": "true",
+                "@rel": "scopus-citedby",
+                "@href": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=79951682125&origin=inward"
+              }
+            ],
+            "prism:publicationName": "Australasian Emergency Nursing Journal",
+            "source-id": "4200151401",
+            "pii": "S1574626710004416",
+            "citedby-count": "23",
+            "prism:volume": "14",
+            "subtype": "ar",
+            "prism:pageRange": "17-25",
+            "dc:title": "Tsunami preparedness of people living in affected and non-affected areas: A comparative study in coastal area in Aceh, Indonesia",
+            "prism:endingPage": "25",
+            "openaccess": "2",
+            "openaccessFlag": null,
+            "prism:doi": "10.1016/j.aenj.2010.10.006",
+            "prism:issn": "15746267",
+            "prism:startingPage": "17",
+            "dc:identifier": "SCOPUS_ID:79951682125"
+          }
+        }
+      }
+    ]
+  }
