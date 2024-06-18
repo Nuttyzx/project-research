@@ -21,7 +21,7 @@
               <th>วุฒิการศึกษาสูงสุด</th>
               <th>สาขาที่เชี่ยวชาญ</th>
               <th>อีเมล</th>
-              <th>สำนักงาน</th>
+              <th>หน่วยงาน</th>
               <th>จังหวัด/เมือง</th>
               <th>ประเทศ</th>
               <th>IEEE URL</th>
@@ -161,7 +161,7 @@ watch(searchQuery, (newsearchQuery) => {
 });
 
 const currentPage = ref(1); // หน้าปัจจุบัน
-const itemsPerPage = 25; // จำนวนรายการต่อหน้า
+const itemsPerPage = 8; // จำนวนรายการต่อหน้า
 
 // ฟังก์ชันสำหรับการคำนวณหน้าทั้งหมด
 const totalPages = computed(() => {
@@ -223,26 +223,29 @@ const delete_author = async (author_id) => {
 
 <style>
 .table td:nth-child(2) {
-  min-width: 250px;
+  min-width: 200px;
 }
 .table td:nth-child(3) {
   min-width: 200px; 
 }
 /* 4 คือลำดับของคอลัมน์ คือช่อง วุฒิการศึกษา*/
 .table td:nth-child(4) {
-  min-width: 280px; 
+  min-width: 240px; 
 }
 .table td:nth-child(5) {
   min-width: 250px;
 }
+.table td:nth-child(10) {
+  min-width: 160px;
+}
 .table td:nth-child(7) {
-  min-width: 200px; 
+  min-width: 160px; 
 }
 .table td:nth-child(8) {
-  min-width: 200px; 
+  min-width: 140px; 
 }
 .table td:nth-child(9) {
-  min-width: 200px; 
+  min-width: 80px; 
 }
 
 /* .table {

@@ -333,7 +333,7 @@
     <br>
     <div class="mt-6 flex items-center justify-end gap-x-6">
         <button type="button" @click="cancelForm"   class="text-sm font-semibold leading-6 text-gray-900">ยกเลิก</button>
-        <button type="submit" @click="formImportData" class=" mr-48 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">บันทึก</button>
+        <button type="submit" @click="formImportData" class=" mr-80 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">บันทึก</button>
     </div>
 
   </div>

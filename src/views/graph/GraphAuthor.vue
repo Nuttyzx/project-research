@@ -11,7 +11,7 @@
           <td>วุฒิการศึกษาสูงสุด</td>
           <td>สาขาที่เชี่ยวชาญ</td>
           <td>อีเมล</td>
-          <td>สำนักงาน</td>
+          <td>หน่วยงาน</td>
           <td>จังหวัด/เมือง</td>
           <td>ประเทศ</td>
           <td>IEEE URL</td>
@@ -21,10 +21,10 @@
       <tbody>
         <tr  v-for="author in authorData" :key="author.id_author" class="text-sm">       
           <td class="border-r border-black text-left align-top" >
-            <div class="w-44">{{ author.n.full_name ? author.n.full_name: "-"}}</div>
+            <div class="w-42">{{ author.n.full_name ? author.n.full_name: "-"}}</div>
           </td>
           <td class="border-r border-black align-top" :style="{textAlign: author.n.name_th ? 'left' : 'center'}">
-            <div class="w-44">{{ author.n.name_th ? author.n.name_th : "-" }}</div>
+            <div class="w-42">{{ author.n.name_th ? author.n.name_th : "-" }}</div>
           </td>
 
           <td class="border-r border-black align-top" :style="{textAlign: author.degree.length > 0 ? 'left' : 'center'}">
@@ -160,272 +160,10 @@
       <img :src="nodeIconGreenSrc" alt="Node green" class="h-6 w-6" />&nbsp;  = &nbsp; สาขาที่เชี่ยวชาญที่มีความสัมพันธ์
     </p>
   </div>
-  <!-- <div style="margin: 20px; ">
-    
-      <img :src="nodeIconPinkSrc" alt="Node Pink" class="h-6 w-6" />&nbsp;  = &nbsp; นักวิจัยที่ค้นหา <br>
-      <img :src="nodeIconRedSrc" alt="Node Red" class="h-6 w-6" />&nbsp;  = &nbsp; นักวิจัยที่มีความสัมพันธ์ <br>
-      <img :src="nodeIconYellowSrc" alt="Node Yellow" class="h-6 w-6" />&nbsp;  = &nbsp; งานวิจัยของนักวิจัยที่ค้นหา <br>
-      <img :src="nodeIconOrangeSrc" alt="Node Orange" class="h-6 w-6" />&nbsp;  = &nbsp; งานวิจัยที่มีความสัมพันธ์ <br>
-      <img :src="nodeIconGreenlightSrc" alt="Node Greenlight" class="h-6 w-6" />&nbsp;  = &nbsp; สาขาที่นักวิจัยที่ค้นหาเชี่ยวชาญ <br>
-      <img :src="nodeIconGreenSrc" alt="Node green" class="h-6 w-6" />&nbsp;  = &nbsp; สาขาที่เชี่ยวชาญที่มีความสัมพันธ์
-    
-  </div> -->
 
   <div id="graph"></div>
 </template>
 
-<!-- <script>
-import axios from "axios";
-import * as d3 from "d3";
-import { ref} from "vue";
-import nodeIconRed from "@/assets/icon/red.png";
-import nodeIconOrange from "@/assets/icon/orange.png";
-import nodeIconGreen from "@/assets/icon/green.png";
-import nodeIconBlue from "@/assets/icon/blue.jpg";
-
-export default {
-  data() {
-    return {
-      force: null,
-      svg: null,
-    };
-  },
-  setup() {
-    const authorData = ref({});
-
-    const nodeIconRedSrc = ref(nodeIconRed);
-    const nodeIconOrangeSrc = ref(nodeIconOrange);
-    const nodeIconGreenSrc = ref(nodeIconGreen);
-    const nodeIconBlueSrc = ref(nodeIconBlue);
-
-    return {
-      authorData,
-      nodeIconRedSrc,nodeIconOrangeSrc,nodeIconGreenSrc,nodeIconBlueSrc,
-    };
-  },
-  mounted() {
-    //สร้าง SVG container สำหรับกราฟ
-    this.fetchData();
-    this.fetchGraphData();
-
-    this.svg = d3
-      .select("#graph")
-      .append("svg")
-      .attr("width", "100%")
-      .attr("height", "100%")
-      .attr("pointer-events", "all");
-
-    window.addEventListener("resize", this.resizeGraph); //ถูกเรียกเมื่อหน้าจอถูกปรับขนาด ซึ่งจะทำการปรับ force center และ SVG ใหม่.
-    
-  },
-  methods: {
-    fetchData(){
-      const id_author = this.$route.params.id;
-      if (!id_author) {
-        console.error("id_author is undefined or null");
-        return;
-      }
-      axios
-        .get(`${import.meta.env.VITE_FASTAPI}/single_user/${id_author}`, {
-          withCredentials: true,
-        })
-        .then((response) => {
-          authorData.value = response.data;
-          console.log(authorData.value);
-        }
-      )
-
-    },
-
-    fetchGraphData() {
-      const id_author = this.$route.params.id;
-      console.log(id_author);
-      if (!id_author) {
-        console.error("id_author is undefined or null");
-        return;
-      }
-      
-
-      axios
-        .get(`${import.meta.env.VITE_FASTAPI}/graph_data_author/${id_author}`, {
-          withCredentials: true,
-        })
-        .then((response) => {
-          console.log(response.data);
-          const graphData = response.data.graph_data;
-
-          if (!graphData || !graphData.nodes || !graphData.links) {
-            console.error("Graph data is missing or incomplete", graphData);
-            return;
-          }
-          
-          this.createGraph(graphData);
-        })
-           
-        .catch((error) => {
-          console.log("Error fetching graph data:", error);
-        });
-    },
-
-    createGraph(graphData) {
-      this.force = d3
-            .forceSimulation(graphData.nodes)
-            .force("charge", d3.forceManyBody().strength(-400))
-            .force("link",d3.forceLink(graphData.links).id((d) => d.id).distance(150).strength(1))
-            .force("center",d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2).strength(0.1))
-            .force("collide", d3.forceCollide().radius(20).strength(1)) // ป้องกันการซ้อนทับของโหนด
-            .on("tick", () => {
-              this.svg
-                .selectAll("line")
-                .attr("x1", (d) => d.source.x)
-                .attr("y1", (d) => d.source.y)
-                .attr("x2", (d) => d.target.x)
-                .attr("y2", (d) => d.target.y);
-
-              this.svg
-                .selectAll(".node")
-                .attr("cx", (d) => d.x)
-                .attr("cy", (d) => d.y);
-            });
-
-          // ล้างข้อมูลเดิม
-          this.force.nodes([]);
-          this.force.force("link").links([]);
-
-          // สร้างเส้น link
-          const link = this.svg
-            .selectAll("line")
-            .data(graphData.links)
-            .enter()
-            .append("line")
-            .attr("class", "link")
-            .style("stroke", "#999")
-            .attr("stroke-opacity", 0.6)
-            .attr("stroke-width", (d) => Math.sqrt(d.value))
-            
-          // สร้างโหนด node
-          const node = this.svg
-            .selectAll(".node")
-            .data(graphData.nodes)
-            .enter()
-            .append("circle")
-            .attr("class", (d) => "node " + d.labels.join(" "))
-            .attr("r", 20)
-            .style("fill", (d) => {
-              if (d.labels.includes("Author")) {
-                //ตรวจสอบว่า Array นั้น ๆ มีค่าคืน true
-                return "red";
-              } else if (d.labels.includes("Article")) {
-                return "orange";
-              } else if (d.labels.includes("Degree")) {
-                return "blue";
-              } else if (d.labels.includes("Expertise")) {
-                return "green";
-              } else {
-                return "gray";
-              }
-            })
-            
-            .call(
-              d3
-                .drag()
-                .on("start", (event, d) => this.dragstarted(event, d))
-                .on("drag", (event, d) => this.dragged(event, d))
-                .on("end", (event, d) => this.dragended(event, d))
-            ); // ทำให้โหนดเลื่อนได้
-            
-
-          // เพิ่มข้อมูลใหม่
-          this.force
-            .nodes(graphData.nodes)
-            .force("link")
-            .links(graphData.links);
-          this.force.alpha(1).restart();
-
-          // Set node title attribute
-          node.append("title").text(function (d) {
-            if (d.labels.includes("Author")) {
-              var full_name = d.properties.full_name ?  d.properties.full_name : "-";
-              var name_th = d.properties.name_th ?  d.properties.name_th : "-";
-              var email =  d.properties.email ? d.properties.email : "-";
-              var office = d.properties.office ? d.properties.office : "-";
-              var province = d.properties.province ? d.properties.province : "-";
-              var country = d.properties.country ? d.properties.country : "-";
-              return  "ชื่อภาษาอังกฤษ:  " + full_name + "\n" +
-                "ชื่อภาษาไทย:  " + name_th + "\n" +
-                "อีเมล:  " + email + "\n" +
-                "สำนักงาน:  " + office + "\n" +
-                "จังหวัด:  " + province + "\n" +
-                "ประเทศ:  " + country;
-              } else if (d.labels.includes("Article")) {
-                var country = d.properties.title  ? d.properties.title  : "-" ;
-                var publication_year = d.properties.publication_year  ? d.properties.publication_year  : "-" ;
-                var publication_title = d.properties.publication_title  ? d.properties.publication_title  : "-" ;
-                var content_type = d.properties.content_type  ? d.properties.content_type : "-" ;
-                var doi = d.properties.doi  ? d.properties.doi : "-" ;
-                var page = "";
-                if(d.properties.start_page && d.properties.end_page){
-                  page = d.properties.start_page + " - " + d.properties.end_page;
-                }
-                else if(d.properties.start_page && d.properties.end_page == ""){
-                  page = d.properties.start_page;
-                }
-                else{
-                  page = "-";
-                }
-                return  "ชื่องานวิจัย:  " + country + "\n" +
-                        "ปีที่เผยแพร่:  " + publication_year+ "\n" +
-                        "ชื่อวารสารหรือบทความ:  " + publication_title + "\n" +
-                        "ประเภทงานวิจัย:  " + content_type + "\n" +
-                        "หน้าเลขหน้า:  " + page + "\n" +
-                        "doi:  " + doi ;
-                } else if (d.labels.includes("Degree")){
-                    return d.properties.degree_name ? d.properties.degree_name : "-";
-                } else if (d.labels.includes("Expertise")){
-                  return d.properties.expertise_name ? d.properties.expertise_name  : "-";       
-                } else {
-                  return JSON.stringify(d.properties, null).replace(/,/g, ",\n"); // (/,/g) ค้นหาทุกตัวอักษร , เพื่อแทนที่ด้วย , ตามด้วย \n
-                }
-          });
-
-          // Force simulation ticks อัปเดตตำแหน่งของลิงก์และโหนด
-          // this.force.on("tick", () => {
-          //   link
-          //     .attr("x1", (d) => d.source.x)
-          //     .attr("y1", (d) => d.source.y)
-          //     .attr("x2", (d) => d.target.x)
-          //     .attr("y2", (d) => d.target.y);
-
-          //     node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-          // });
-    },
-
-    resizeGraph() {
-      this.force.force(
-        "center",
-        d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2)
-      ); // ปรับ force center ใหม่เมื่อหน้าจอถูกปรับขนาด
-      this.svg
-        .attr("width", window.innerWidth)
-        .attr("height", window.innerHeight); // ปรับขนาด SVG
-      this.force.restart(); // รีสตาร์ท force
-    },
-    dragstarted(event, d) {
-      if (!event.active) this.force.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    },
-    dragged(event, d) {
-      d.fx = event.x;
-      d.fy = event.y;
-    },
-    dragended(event, d) {
-      if (!event.active) this.force.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
-    },
-  },
-}; -->
 
 <script setup>
 import { ref, onMounted } from "vue";
@@ -542,9 +280,9 @@ const createGraph = (graphData) => {
   force.value = d3
     .forceSimulation(graphData.nodes)
     .force("charge", d3.forceManyBody().strength(-300))
-    .force("link",d3.forceLink(graphData.links).id((d) => d.id).distance(60).strength(0.7))
+    .force("link",d3.forceLink(graphData.links).id((d) => d.id).distance(60).strength(0.3))
     .force("center",d3.forceCenter(window.innerWidth / 2, window.innerHeight/1.3))
-    .force("collide", d3.forceCollide().radius(30).strength(1)) // ป้องกันการซ้อนทับของโหนด
+    .force("collide", d3.forceCollide().radius(35).strength(0.5)) // ป้องกันการซ้อนทับของโหนด
     
     .on("tick", () => {
       svg.value

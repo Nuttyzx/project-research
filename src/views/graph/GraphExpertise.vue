@@ -16,7 +16,7 @@
                     <td>วุฒิการศึกษาสูงสุด</td>
                     <td>สาขาที่เชี่ยวชาญ</td>
                     <td>อีเมล</td>
-                    <td>สำนักงาน</td>
+                    <td>หน่วยงาน</td>
                     <td>จังหวัด/เมือง</td>
                     <td>ประเทศ</td>
                     <td>IEEE URL</td>
@@ -37,7 +37,7 @@
                     <td class="border-r border-black align-top" :style="{ textAlign: author.authors_w_degrees_w_expertises[0].degree.length > 0 ? 'left' : 'center' }">
                         <template v-if="author.authors_w_degrees_w_expertises[0].degree.length > 0">
                             <template v-for="degree in author.authors_w_degrees_w_expertises[0].degree" :key="degree.id">
-                                <div class="w-52" :style="{ textAlign: degree.degrees != null && degree.degrees.degree_name !== null  ? 'left' : 'center' }">
+                                <div class="w-48" :style="{ textAlign: degree.degrees != null && degree.degrees.degree_name !== null  ? 'left' : 'center' }">
                                   {{degree.degrees != null && degree.degrees.degree_name !== null ? "- " + degree.degrees.degree_name : "-" }}
                                     <br><br>
                                 </div>
@@ -60,13 +60,13 @@
                         {{ author.authors_w_degrees_w_expertises[0].author.email ? author.authors_w_degrees_w_expertises[0].author.email : "-" }}
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.authors_w_degrees_w_expertises[0].author.office ? 'left' : 'center' }">
-                      <div class="w-44">{{ author.authors_w_degrees_w_expertises[0].author.office ? author.authors_w_degrees_w_expertises[0].author.office : "-" }}</div>
+                      <div class="w-42">{{ author.authors_w_degrees_w_expertises[0].author.office ? author.authors_w_degrees_w_expertises[0].author.office : "-" }}</div>
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.authors_w_degrees_w_expertises[0].author.province ? 'left' : 'center' }">
                       <div class="w-28">{{ author.authors_w_degrees_w_expertises[0].author.province ? author.authors_w_degrees_w_expertises[0].author.province : "-" }}</div>
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.authors_w_degrees_w_expertises[0].author.country ? 'left' : 'center' }">
-                      <div class="w-24">{{ author.authors_w_degrees_w_expertises[0].author.country ? author.authors_w_degrees_w_expertises[0].author.country : "-" }}</div>
+                      <div class="w-22">{{ author.authors_w_degrees_w_expertises[0].author.country ? author.authors_w_degrees_w_expertises[0].author.country : "-" }}</div>
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.authors_w_degrees_w_expertises[0].author.authorUrl ? 'left' : 'center' }">
                         <template v-if="author.authors_w_degrees_w_expertises[0].author.authorUrl && author.authors_w_degrees_w_expertises[0].author.authorUrl !== '-'">

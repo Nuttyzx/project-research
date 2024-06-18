@@ -67,7 +67,7 @@
                     <td>วุฒิการศึกษาสูงสุด</td>
                     <td>สาขาที่เชี่ยวชาญ</td>
                     <td>อีเมล</td>
-                    <td>สำนักงาน</td>
+                    <td>หน่วยงาน</td>
                     <td>จังหวัด/เมือง</td>
                     <td>ประเทศ</td>
                     <td>IEEE URL</td>
@@ -88,7 +88,7 @@
                     <td class="border-r border-black align-top" :style="{ textAlign: author.degree.length > 0  ? 'left' : 'center' }">
                         <template v-if="author.degree.length > 0">
                             <template v-for="degree in author.degree" :key="degree.id">
-                                <div class="w-52" :style="{ textAlign: degree.degrees != null && degree.degrees.degree_name !== null  ? 'left' : 'center' }">  
+                                <div class="w-48" :style="{ textAlign: degree.degrees != null && degree.degrees.degree_name !== null  ? 'left' : 'center' }">  
                                     {{degree.degrees != null && degree.degrees.degree_name !== null ? "- " + degree.degrees.degree_name : "-" }}
                                     <br><br>
                                 </div>
@@ -111,13 +111,13 @@
                         {{ author.author.email ? author.author.email : "-" }}
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.author.office ? 'left' : 'center' }">
-                        <div class="w-44">{{ author.author.office ? author.author.office : "-" }}</div>
+                        <div class="w-40">{{ author.author.office ? author.author.office : "-" }}</div>
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.author.province ? 'left' : 'center' }">
                         <div class="w-28">{{ author.author.province ? author.author.province : "-" }}</div>
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.author.country ? 'left' : 'center' }">
-                        <div class="w-24">{{ author.author.country ? author.author.country : "-" }}</div>
+                        <div class="w-22">{{ author.author.country ? author.author.country : "-" }}</div>
                     </td>
                     <td class="border-r border-black align-top" :style="{ textAlign: author.author.authorUrl ? 'left' : 'center' }">
                         <template v-if="author.author.authorUrl && author.author.authorUrl !== '-'">
@@ -128,7 +128,7 @@
                         </template>
                         <!-- ใช้ :href และผูกค่ากับ author.properties.authorUrl ทำให้ลิงก์ทำงานได้โดยอัตโนมัติ-->
                     </td>
-                    <td class="border-r border-black align-top" :style="{ textAlign: author.author.website ? 'left' : 'center' }">
+                    <td class="border-r border-black align-top " :style="{ textAlign: author.author.website ? 'left' : 'center' }">
                         <template v-if="author.author.website && author.author.website !== '-'">
                             <a :href="author.author.website" target="_blank" class="link link-primary">{{author.author.website}}</a>
                         </template>

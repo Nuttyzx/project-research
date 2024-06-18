@@ -47,9 +47,13 @@
                         </select>
                         </div>
                     </div>
-                    <div class="mt-7" >
-                        <input v-model="edit_user.degree[0].degree_name" type="text" :id="edit_user.id_degree"  class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา" />
+                    <div class="mt-7" v-if="edit_user.degree.length > 0">
+                      <input v-model="edit_user.degree[0].degree_name" type="text" :id="edit_user.id_degree" class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา" />
                     </div>
+                    <div class="mt-7" v-else>
+                      <input v-model="edit_user.degree[0].degree_name" type="text" class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา" />
+                    </div>
+
                 </div>
                 </div>          
 
@@ -139,21 +143,6 @@
                   <input v-model="edit_user.n.office" type="text"  class="input input-bordered w-full shadow-none" placeholder="silpakorn university"/>
               </div>
           </div>
-          <!-- จังหวัดสำนักงาน
-          <div class="sm:col-span-3">
-              <label class="block text-sm font-medium leading-6 text-gray-900">จังหวัด</label>
-              <div class="mt-2">
-                  <input  v-model="edit_user.n.province" type="text"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-              </div>
-          </div>
-          ประเทศสำนักงาน
-          <div class="sm:col-span-3">
-              <label class="block text-sm font-medium leading-6 text-gray-900">ประเทศ</label>
-              <div class="mt-2">
-                  <input v-model="edit_user.n.country"  type="text"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-              </div>
-          </div> -->
-
            <!-- ประเทศสำนักงาน -->
            <div class="sm:col-span-3">
               <label class="block text-sm font-medium leading-6 text-gray-900">ประเทศ</label>
@@ -372,6 +361,9 @@ const fetch_single_user = async () => {
             console.log(leveldegree.value);
             
           } else {
+            if (edit_user.value.degree.length === 0) {
+              edit_user.value.degree.push({ degree_name: '' });
+            }
             console.log("ไม่มีข้อมูลวุฒิการศึกษา");
           }
             })
@@ -441,7 +433,7 @@ const removeDegree = (degreeIndex) => {
       console.log(store.state.searchQueryAuthor)
       watch(() => edit_user.value.country, loadStates);
       
-  
+      
     });
    
 
