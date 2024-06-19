@@ -208,8 +208,8 @@
                     </div>
                     
                 </div>
-                <div  class="mt-5" >
-                    <input v-model="author.degree[0].degree_name" type="text" :id="'author.degree.degree_name_' + index"  class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา"/>
+                <div  class="mt-5" v-if="author.degree && author.degree[index]">
+                    <input v-model="author.degree[index].degree_name" type="text" :id="'author.degree.degree_name_' + index"  class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา"/>
                 </div>
               </div>
             </div> 
@@ -359,7 +359,7 @@
           <div>abstract_url : {{formData.abstract_url}}</div>
           <div>คำสำคัญ : 
             <label v-for="(keyword, index) in temporaryKeywords" :key="index">
-              {{ keyword + '  '}}
+              {{ keyword + ((index+1)==temporaryKeywords.length?'':', ')}}
             </label>
           </div>
           <br>
@@ -368,7 +368,11 @@
         <div class="row">
           <div class="col-2"></div>
           <div class="col-10" style="border-bottom: black solid 1px;">
-            รายชื่อนักวิจัยที่มีอยู่ในระบบ
+            <div>รายชื่อนักวิจัยที่มีอยู่ในระบบ : 
+            <label v-for="(keyword, index) in author_indatabase" :key="index">
+              {{ keyword.full_name + ((index+1)==author_indatabase.length?'':', ')}}
+            </label>
+          </div>
           </div>
         </div>
         <div class="row" v-for="(keyword, index) in authorsDetail" :key="index">
@@ -379,11 +383,11 @@
             <div>ชื่อ-นามสกุล (ภาษาอังกฤษ) : {{keyword.full_name?keyword.full_name:'37086371642'}}</div>
             <br>
             <div>หมายเลขนักวิจัย : {{keyword.id?keyword.id:'37086371642'}}</div>
-            <!-- <div>วุฒิการศึกษาสูงสุด : {{keyword.full_name?keyword.id:'37086371642'}} สาขา : {{keyword.full_name?keyword.id:'37086371642'}}</div>
-            <div>สาขาที่เชี่ยวชาญ : {{keyword.full_name?keyword.id:'37086371642'}}</div> -->
             <br>
-            <div>วุฒิการศึกษาสูงสุด : ปริญญาเอก  สาขา : วิทยาการคอมพิวเตอร์</div>
-            <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div>
+            <!-- <div>วุฒิการศึกษาสูงสุด : ปริญญาเอก  สาขา : วิทยาการคอมพิวเตอร์</div>
+            <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div> -->
+            <div>วุฒิการศึกษาสูงสุด : {{keyword.full_name?keyword.id:'37086371642'}} สาขา : {{keyword.full_name?keyword.id:'37086371642'}}</div>
+            <div>สาขาที่เชี่ยวชาญ : {{keyword.full_name?keyword.id:'37086371642'}}</div>
             <br>
 
             <div>อีเมล์ : {{keyword.email?keyword.email:'37086371642'}}</div>
@@ -825,7 +829,7 @@ const removeKeyword = index => {
 
   // ตรวจสอบค่าที่ได้รับ
   // console.log(PublisherInput);
-  console.log(currentPublisher);
+  console.log('currentPublisher',currentPublisher);
 
    // รวม leveldegree เข้ากับ degree_name สำหรับนักวิจัยแต่ละคน
 
@@ -865,24 +869,8 @@ const removeKeyword = index => {
       console.log('Combined expertise:', formData.value.authors);
     
 
-    console.log(formData.value.authors)
-    // สร้างข้อมูลที่รวมข้อมูลทั้งสองส่วนไว้ก่อนที่จะส่งไปยัง API
-    formData.value.authors = formData.value.authors.concat(author_indatabase.value);
+    console.log('authors before',formData.value.authors)
 
-    
-      
-    temporaryKeywords.value.forEach(tempKeyword => {
-       const newKeyword = tempKeyword.trim();
-          if (newKeyword !== '') {
-             if(formData.value.keyword == ''){
-              formData.value.keyword = newKeyword;
-             }
-             else{
-              formData.value.keyword += (formData.value.keyword === '') ? newKeyword : `,${newKeyword}`;
-             }   
-          }
-    });
-    console.log(formData.value.keyword);
     authorsDetail.value =  formData.value.authors.map(author => {
       return {
           authorUrl: author.authorUrl,
@@ -899,7 +887,25 @@ const removeKeyword = index => {
           id: author.id || null,
       };
     });
-    console.log('formData authorsDetail',authorsDetail);
+    
+    // สร้างข้อมูลที่รวมข้อมูลทั้งสองส่วนไว้ก่อนที่จะส่งไปยัง API
+    formData.value.authors = formData.value.authors.concat(author_indatabase.value);
+
+    
+      
+    temporaryKeywords.value.forEach(tempKeyword => {
+       const newKeyword = tempKeyword.trim();
+          if (newKeyword !== '') {
+             if(formData.value.keyword == ''){
+              formData.value.keyword = newKeyword;
+             }
+             else{
+              formData.value.keyword += (formData.value.keyword === '') ? newKeyword : `,${newKeyword}`;
+             }   
+          }
+    });
+    console.log('keyword',formData.value.keyword);
+    // console.log('formData authorsDetail',authorsDetail);
 
     previewData();
     
