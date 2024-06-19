@@ -233,11 +233,12 @@
             </div>
             
             <div class="sm:col-span-full">
-              <label class="text-sm font-medium  text-gray-900">อื่นๆ &nbsp;&nbsp; ระบุสาขาที่เชี่ยวชาญ: </label>
+              <button @click="showExpertiselist()" class="btn btn-warning btn-sm rounded-md">จัดการสาขาที่เชี่ยวชาญ</button>
+              <!-- <label class="text-sm font-medium  text-gray-900">อื่นๆ &nbsp;&nbsp; ระบุสาขาที่เชี่ยวชาญ: </label> -->
               <!-- <div v-for="(expertise, expertiseIndex) in author.expertise" :key="expertiseIndex">
                   <input  v-model="expertise.expertise_name" type="text" :id="'expertise.expertise_name_' + index" :name="'expertise.expertise_name_' + index+ '_' + expertiseIndex" class="input input-bordered w-98 ml-2" placeholder="สาขาที่เชี่ยวชาญ"/>
               </div> -->
-              <div>
+              <!-- <div>
                 <div v-for="(other, otherIndex) in otherExpertise[index]" :key="`other-${index}-${otherIndex}`">
                   <input v-model="other.otherExpertise_name" type="text" :id="'otherExpertise_name_' + index + '_' + otherIndex" :name="'otherExpertise_name_' + index + '_' + otherIndex" class="input input-bordered w-98 ml-2 mt-2" placeholder="สาขาที่เชี่ยวชาญอื่นๆ"/>
                 </div>
@@ -245,7 +246,7 @@
                 <div class="mt-3 ml-2">
                     <button @click="addOtherExpertise(index)" class="btn btn-warning btn-sm rounded-md">เพิ่มสาขาที่เชี่ยวชาญ</button>
                 </div>
-              </div>
+              </div> -->
               
             </div>
 
@@ -273,10 +274,10 @@
                 </div>
             </div>
   
-            <p class="mt-1 text-sm leading-6 text-gray-600">ที่อยู่สำนักงาน</p>
+            <p class="mt-1 text-sm leading-6 text-gray-600">ที่อยู่หน่วยงาน</p>
             <!-- ชื่อสำนักงาน -->
             <div class="col-span-full">
-                <label class="block text-sm font-medium leading-6 text-gray-900">ชื่อสำนักงาน </label>
+                <label class="block text-sm font-medium leading-6 text-gray-900">ชื่อหน่วยงาน </label>
                 <div class="mt-2">
                     <input v-model="author.office" type="text" :id="'office_' + index" :name="'office_' + index"  class="input input-bordered w-full shadow-none" placeholder="silpakorn university"/>
                 </div>
@@ -338,8 +339,117 @@
 
   </div>
   <br>
-  
-     
+    <modal :show="showModal" @close="showModal = false">
+      <template #header></template>
+      <template #body>
+        <div style="border-bottom: black solid 1px;">
+          <div><b>ชื่องานวิจัย</b> : {{formData.title}}</div>
+          <br>
+          <div>ปีที่เผยแพร่ : {{formData.publication_title}}</div>
+          <div>ชื่อวารสารหรือบทความ : {{formData.publication_year}}</div>
+          <br>
+          <div>บทคัดย่อ :</div>
+          <div>{{formData.abstract}}</div>
+          <br>
+          <div>หมายเลขงานวิจัย : {{formData.article_number}}</div>
+          <div>ประเภทงานวิจัย : {{formData.content_type}}</div>
+          <div>หมายเลขหน้า : {{formData.start_page}} - {{formData.end_page}}</div>
+          <div>doi : {{formData.doi}}</div>
+          <div>แหล่งที่เผยแพร่ : {{formData.publisher}}</div>
+          <div>abstract_url : {{formData.abstract_url}}</div>
+          <div>คำสำคัญ : 
+            <label v-for="(keyword, index) in temporaryKeywords" :key="index">
+              {{ keyword + '  '}}
+            </label>
+          </div>
+          <br>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-10" style="border-bottom: black solid 1px;">
+            รายชื่อนักวิจัยที่มีอยู่ในระบบ
+          </div>
+        </div>
+        <div class="row" v-for="(keyword, index) in authorsDetail" :key="index">
+          <div class="col-2"><img src="../../assets/images/people.png" style="max-width: 100%;"</div>
+          <div class="col-10" style="border-bottom: black solid 1px;">
+            <div><b>นักวิจัยคนที่ {{ index+1}}</b></div>
+            <div>ชื่อ-นามสกุล (ภาษาไทย) : {{keyword.name_th?keyword.name_th:keyword.full_name}}</div>
+            <div>ชื่อ-นามสกุล (ภาษาอังกฤษ) : {{keyword.full_name?keyword.full_name:'37086371642'}}</div>
+            <br>
+            <div>หมายเลขนักวิจัย : {{keyword.id?keyword.id:'37086371642'}}</div>
+            <!-- <div>วุฒิการศึกษาสูงสุด : {{keyword.full_name?keyword.id:'37086371642'}} สาขา : {{keyword.full_name?keyword.id:'37086371642'}}</div>
+            <div>สาขาที่เชี่ยวชาญ : {{keyword.full_name?keyword.id:'37086371642'}}</div> -->
+            <br>
+            <div>วุฒิการศึกษาสูงสุด : ปริญญาเอก  สาขา : วิทยาการคอมพิวเตอร์</div>
+            <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div>
+            <br>
+
+            <div>อีเมล์ : {{keyword.email?keyword.email:'37086371642'}}</div>
+            <br>
+            <div>IEEE URL : {{keyword.authorUrl?keyword.authorUrl:'https://ieeexplore.ieee.org/author/37086371642'}}</div>
+            <br>
+            <div>เว็บไซต์ : {{keyword.website?keyword.website:'https://ieeexplore.ieee.org/author/37086371642'}}</div>
+            <br>
+            <div><b>ที่อยู่หน่วยงาน</b></div>
+            <div>ชื่อหน่วยงาน : {{keyword.office?keyword.office:'37086371642'}}</div>
+            <div>ประเทศ : {{keyword.country?keyword.country:'37086371642'}}</div>
+            <div>จังหวัด/เมือง : {{keyword.province?keyword.province:'37086371642'}}</div>
+          </div>
+        </div>
+      </template>
+      <template #footer>
+        <button class="btn btn-warning modal-default-left" @click="closeModal('edit')">แก้ไขข้อมูล</button>
+        <button class="btn btn-default modal-default-right" @click="closeModal('save')">บันทึกข้อมูล</button>
+      </template>
+    </modal>
+
+    <modal :show="showModalExpertise" @close="showModalExpertise = false">
+      <template #header></template>
+      <template #body>
+        <table class="table table-zebra" style="min-width: 500px;">
+          <thead>
+            <tr>
+              <th style="background: #D0D0D0;font-weight: 700;color: black;">สาขาที่เชียวชาญ</th>
+              <th style="background: #D0D0D0;font-weight: 700;color: black;">จัดการ</th>
+            </tr>
+          </thead>
+          <tbody v-for="(keyword, index) in search_expertise" :key="index">
+            <tr>
+              <td>{{keyword.n.expertise_name}}</td>
+              <td><button class="btn btn-warning btn-sm" @click="expertiAddEdit('edit')">แก้ไข</button> <button class="btn btn-error btn-sm">ลบ</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </template>
+      <template #footer>
+        <button class="btn btn-warning modal-default-left" @click="expertiAddEdit('add')">เพิ่มสาขาที่เชี่ยวชาญ</button>
+        <button class="btn btn-default modal-default-right" @click="closeModal('edit')">ปิด</button>
+      </template>
+    </modal>
+
+    <modal :show="showModalAddEdit" @close="showModalAddEdit = false">
+      <template #header>
+        <div style="width: 100%;text-align: center;">
+          <h2>{{ btnExperti }}</h2>
+        </div>
+      </template>
+      <template #body>
+        <div class="row" style="width: 500px;">
+          <div class="col-3" style="padding-top: 17px;">
+            ชื่อสาขาที่เชี่ยวชาญ
+          </div>
+          <div class="col-9">
+            <input type="text" id="add_expertise" name="add_expertise"  class="input input-bordered w-full shadow-none" placeholder="example" />
+          </div>
+        </div>
+      </template>
+      <template #footer>
+        <button class="btn btn-warning modal-default-right" @click="closeModal('edit')">{{btnExperti}}</button>
+        <button class="btn btn-default modal-default-left" @click="closeModal('edit')">ปิด</button>
+      </template>
+    </modal>
   </template>
   
     
@@ -350,6 +460,88 @@
   import Papa from 'papaparse';
   import { useStore } from 'vuex';
   import { useRouter } from 'vue-router';
+
+  import Modal from '../../components/Modal.vue';
+
+  const showModal = ref(false);
+  const showModalExpertise = ref(false);
+  const showModalAddEdit = ref(false);
+  const btnExperti = ref('เพิ่มสาขาที่เชี่ยวชาญ');
+
+  function previewData() {
+    console.log('previewData');
+    
+    showModal.value = true;
+  }
+
+  function showExpertiselist() {
+    console.log('previewData');
+    
+    showModalExpertise.value = true;
+  }
+
+  function expertiAddEdit(val) {
+    console.log('expertiAddEdit');
+    btnExperti.value = 'เพิ่มสาขาที่เชี่ยวชาญ';
+    if(val=='edit')
+    {
+      btnExperti.value = 'แก้ไขสาขาที่เชี่ยวชาญ';
+    }
+    showModalExpertise.value = false;
+    showModalAddEdit.value = true;
+  }
+
+  async function closeModal (val) {
+    console.log(val);
+    if(val=='save')
+    {
+      try {
+        const response = await axios.post(`${import.meta.env.VITE_FASTAPI}/form_import_data`, {
+            article_number: formData.value.article_number,
+            authors: formData.value.authors.map(author => {
+                return {
+                    authorUrl: author.authorUrl,
+                    website: author.website,
+                    pic_name: author.pic_name,
+                    full_name: author.full_name,
+                    country: author.country || '',
+                    degree: author.degree || [],
+                    email: author.email || '',
+                    expertise: author.expertise || [],
+                    name_th: author.name_th || '',
+                    office: author.office || '',
+                    province: author.province || '',
+                    id: author.id || null,
+                };
+            }),
+            content_type: formData.value.content_type,
+            doi: formData.value.doi || '',
+            end_page: formData.value.end_page || '',
+            publication_title: formData.value.publication_title,
+            publication_year: formData.value.publication_year.toString(),
+            publisher: currentPublisher,
+            start_page: formData.value.start_page || '',
+            title: formData.value.title,
+            abstract: formData.value.abstract,
+            keyword: formData.value.keyword,
+            abstract_url: formData.value.abstract_url
+
+        });
+        console.log("เพิ่มสำเร็จ");
+        alert("เพิ่มข้อมูลสำเร็จ");
+        console.log(formData.value);
+        console.log(response.data);
+        saveFormData();
+        temporaryKeywords.value = [''];
+      } catch (error) {
+        console.error("เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง API:", error);
+        alert("ไม่สามารถเพิ่มข้อมูลได้");
+      }
+    }
+    showModal.value = false;
+    showModalExpertise.value = false;
+    showModalAddEdit.value = false;
+  }
 
   const store = useStore();
   const router = useRouter();
@@ -371,6 +563,9 @@
     publisher: '',
     authors: []
   });
+
+  const authorsDetail = ref([]);
+
 
   const saveFormData = () => {
     // กรองออกเฉพาะรายชื่อที่ไม่อยู่ใน authorIndatabase
@@ -515,7 +710,7 @@
           // หากชื่อนักวิจัยยังไม่ถูกเลือกให้เพิ่มเข้าไปในรายการ
           author_indatabase.value.push({ full_name: authorName});
       }
-      console.log(author_indatabase.value);
+      console.log('author_indatabase',author_indatabase.value);
   };
   
   // ฟังก์ชันที่ใช้สำหรับตรวจสอบว่านักวิจัยชื่อนี้ถูกเลือกหรือไม่ ในcheckbox
@@ -687,50 +882,69 @@ const removeKeyword = index => {
              }   
           }
     });
-    console.log(formData.value.keyword)
-    
-    try {
-        const response = await axios.post(`${import.meta.env.VITE_FASTAPI}/form_import_data`, {
-            article_number: formData.value.article_number,
-            authors: formData.value.authors.map(author => {
-                return {
-                    authorUrl: author.authorUrl,
-                    website: author.website,
-                    pic_name: author.pic_name,
-                    full_name: author.full_name,
-                    country: author.country || '',
-                    degree: author.degree || [],
-                    email: author.email || '',
-                    expertise: author.expertise || [],
-                    name_th: author.name_th || '',
-                    office: author.office || '',
-                    province: author.province || '',
-                    id: author.id || null,
-                };
-            }),
-            content_type: formData.value.content_type,
-            doi: formData.value.doi || '',
-            end_page: formData.value.end_page || '',
-            publication_title: formData.value.publication_title,
-            publication_year: formData.value.publication_year.toString(),
-            publisher: currentPublisher,
-            start_page: formData.value.start_page || '',
-            title: formData.value.title,
-            abstract: formData.value.abstract,
-            keyword: formData.value.keyword,
-            abstract_url: formData.value.abstract_url
+    console.log(formData.value.keyword);
+    authorsDetail.value =  formData.value.authors.map(author => {
+      return {
+          authorUrl: author.authorUrl,
+          website: author.website,
+          pic_name: author.pic_name,
+          full_name: author.full_name,
+          country: author.country || '',
+          degree: author.degree || [],
+          email: author.email || '',
+          expertise: author.expertise || [],
+          name_th: author.name_th || '',
+          office: author.office || '',
+          province: author.province || '',
+          id: author.id || null,
+      };
+    });
+    console.log('formData authorsDetail',authorsDetail);
 
-        });
-        console.log("เพิ่มสำเร็จ");
-        alert("เพิ่มข้อมูลสำเร็จ");
-        console.log(formData.value);
-        console.log(response.data);
-        saveFormData();
-        temporaryKeywords.value = [''];
-    } catch (error) {
-        console.error("เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง API:", error);
-        alert("ไม่สามารถเพิ่มข้อมูลได้");
-    }
+    previewData();
+    
+    // try {
+    //     const response = await axios.post(`${import.meta.env.VITE_FASTAPI}/form_import_data`, {
+    //         article_number: formData.value.article_number,
+    //         authors: formData.value.authors.map(author => {
+    //             return {
+    //                 authorUrl: author.authorUrl,
+    //                 website: author.website,
+    //                 pic_name: author.pic_name,
+    //                 full_name: author.full_name,
+    //                 country: author.country || '',
+    //                 degree: author.degree || [],
+    //                 email: author.email || '',
+    //                 expertise: author.expertise || [],
+    //                 name_th: author.name_th || '',
+    //                 office: author.office || '',
+    //                 province: author.province || '',
+    //                 id: author.id || null,
+    //             };
+    //         }),
+    //         content_type: formData.value.content_type,
+    //         doi: formData.value.doi || '',
+    //         end_page: formData.value.end_page || '',
+    //         publication_title: formData.value.publication_title,
+    //         publication_year: formData.value.publication_year.toString(),
+    //         publisher: currentPublisher,
+    //         start_page: formData.value.start_page || '',
+    //         title: formData.value.title,
+    //         abstract: formData.value.abstract,
+    //         keyword: formData.value.keyword,
+    //         abstract_url: formData.value.abstract_url
+
+    //     });
+    //     console.log("เพิ่มสำเร็จ");
+    //     alert("เพิ่มข้อมูลสำเร็จ");
+    //     console.log(formData.value);
+    //     console.log(response.data);
+    //     saveFormData();
+    //     temporaryKeywords.value = [''];
+    // } catch (error) {
+    //     console.error("เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง API:", error);
+    //     alert("ไม่สามารถเพิ่มข้อมูลได้");
+    // }
 }
 
 
@@ -760,7 +974,7 @@ const cancelForm = () => {
             withCredentials: true,
           });
           search_expertise.value = response.data;
-          console.log(search_expertise.value)
+          console.log('search_expertise',search_expertise.value)
         } catch (error) {
           console.log(error);
         }
@@ -831,5 +1045,36 @@ const cancelForm = () => {
   </script>
     
   <style lang="scss" scoped>
-    
+    .col-2 {
+      float: left;
+      width: 20%;
+      padding: 5px;
+    }
+    .col-3 {
+      float: left;
+      width: 30%;
+      padding: 5px;
+    }
+    .col-6 {
+      float: left;
+      width: 50%;
+      padding: 5px;
+    }
+    .col-9 {
+      float: left;
+      width: 70%;
+      padding: 5px;
+    }
+    .col-10 {
+      float: left;
+      width: 80%;
+      padding: 5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
   </style>
