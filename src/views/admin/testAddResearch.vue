@@ -386,8 +386,12 @@
             <br>
             <!-- <div>วุฒิการศึกษาสูงสุด : ปริญญาเอก  สาขา : วิทยาการคอมพิวเตอร์</div>
             <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div> -->
-            <div>วุฒิการศึกษาสูงสุด : {{keyword.full_name?keyword.id:'37086371642'}} สาขา : {{keyword.full_name?keyword.id:'37086371642'}}</div>
-            <div>สาขาที่เชี่ยวชาญ : {{keyword.full_name?keyword.id:'37086371642'}}</div>
+            <div>วุฒิการศึกษาสูงสุด : {{keyword.degree[0].degree_name}} สาขา : {{keyword.full_name?keyword.id:'37086371642'}}</div>
+            <div>สาขาที่เชี่ยวชาญ : 
+              <label v-for="(keyword2, index2) in keyword.expertise" :key="index">
+              {{ keyword2.expertise_name + ((index2+1)==keyword.expertise.length?'':', ')}}
+              </label>
+            </div>
             <br>
 
             <div>อีเมล์ : {{keyword.email?keyword.email:'37086371642'}}</div>
@@ -422,7 +426,7 @@
           <tbody v-for="(keyword, index) in search_expertise" :key="index">
             <tr>
               <td>{{keyword.n.expertise_name}}</td>
-              <td><button class="btn btn-warning btn-sm" @click="expertiAddEdit('edit')">แก้ไข</button> <button class="btn btn-error btn-sm">ลบ</button></td>
+              <td><button class="btn btn-warning btn-sm" @click="expertiAddEdit('edit')">แก้ไข</button> <button class="btn btn-error btn-sm" @click="showSuccess('del')">ลบ</button></td>
             </tr>
           </tbody>
         </table>
@@ -450,8 +454,26 @@
         </div>
       </template>
       <template #footer>
-        <button class="btn btn-warning modal-default-right" @click="closeModal('edit')">{{btnExperti}}</button>
+        <button class="btn btn-warning modal-default-right" @click="showSuccess(btnExpertiVal)">{{btnExperti}}</button>
         <button class="btn btn-default modal-default-left" @click="closeModal('edit')">ปิด</button>
+      </template>
+    </modal>
+
+    <modal :show="showModalSuccess" :headbgcolor="'headder-blue'" @close="showModalSuccess = false">
+      <template #header>
+        <div style="width: 100%;text-align: center;font-size: 20px;">
+          <h1>จัดการสาขาที่เชี่ยวชาญ</h1>
+        </div>
+      </template>
+      <template #body>
+        <div style="width: 100%;text-align: center;">
+          {{ btnSuccess }}
+        </div>
+      </template>
+      <template #footer>
+        <div style="width: 100%;text-align: center;">
+          <button class="btn btn-default btn-sm modal-default" @click="closeModal('edit')">ปิด</button>
+        </div>
       </template>
     </modal>
   </template>
@@ -470,7 +492,10 @@
   const showModal = ref(false);
   const showModalExpertise = ref(false);
   const showModalAddEdit = ref(false);
+  const showModalSuccess = ref(false);
   const btnExperti = ref('เพิ่มสาขาที่เชี่ยวชาญ');
+  const btnExpertiVal = ref('');
+  const btnSuccess = ref('เพิ่มเรียบร้อย');
 
   function previewData() {
     console.log('previewData');
@@ -487,12 +512,29 @@
   function expertiAddEdit(val) {
     console.log('expertiAddEdit');
     btnExperti.value = 'เพิ่มสาขาที่เชี่ยวชาญ';
+    btnExpertiVal.value = val;
     if(val=='edit')
     {
       btnExperti.value = 'แก้ไขสาขาที่เชี่ยวชาญ';
     }
     showModalExpertise.value = false;
     showModalAddEdit.value = true;
+  }
+
+  function showSuccess(val) {
+    console.log('expertiAddEdit');
+    btnSuccess.value = 'เพิ่มสาขาที่เชี่ยวชาญเรียบร้อย';
+    if(val=='edit')
+    {
+      btnSuccess.value = 'แก้ไขสาขาที่เชี่ยวชาญเรียบร้อย';
+    }
+    else if(val=='del')
+    {
+      btnSuccess.value = 'ลบที่เชี่ยวชาญเรียบร้อย';
+    }
+    showModalExpertise.value = false;
+    showModalAddEdit.value = false;
+    showModalSuccess.value = true;
   }
 
   async function closeModal (val) {
@@ -545,6 +587,7 @@
     showModal.value = false;
     showModalExpertise.value = false;
     showModalAddEdit.value = false;
+    showModalSuccess.value = false;
   }
 
   const store = useStore();

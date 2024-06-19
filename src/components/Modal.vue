@@ -1,6 +1,7 @@
 <script setup>
 const props = defineProps({
-  show: Boolean
+  show: Boolean,
+  headbgcolor: String
 })
 const emit = defineEmits(['close']);
 </script>
@@ -9,7 +10,7 @@ const emit = defineEmits(['close']);
   <Transition name="modal">
     <div v-if="show" class="modal-mask">
       <div class="modal-container">
-        <div class="modal-header">
+        <div :class="['modal-header', headbgcolor]">
           <slot name="header"></slot>
         </div>
 
@@ -43,11 +44,11 @@ const emit = defineEmits(['close']);
   min-width: 300px;
   max-width: 95%;
   margin: auto;
-  padding: 20px 30px;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
+  padding-bottom: 20px;
 }
 
 .modal-header h3 {
@@ -55,14 +56,27 @@ const emit = defineEmits(['close']);
   color: #42b983;
 }
 
+.headder-blue {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #5b70ef;
+  padding: 20px 30px;
+  color: #fff;
+}
+
 .modal-body {
-  margin: 20px 0;
+  padding: 20px;
   max-height: 700px;
   overflow-y: auto;
 }
 
+.modal-footer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .modal-default-button {
-  float: right;
+
 }
 
 .modal-default-left {
