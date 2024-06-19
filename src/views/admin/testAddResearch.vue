@@ -386,7 +386,8 @@
             <br>
             <!-- <div>วุฒิการศึกษาสูงสุด : ปริญญาเอก  สาขา : วิทยาการคอมพิวเตอร์</div>
             <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div> -->
-            <div>วุฒิการศึกษาสูงสุด : {{keyword.degree[0].degree_name}} สาขา : {{keyword.full_name?keyword.id:'37086371642'}}</div>
+            <!-- <div>วุฒิการศึกษาสูงสุด : {{keyword.degree[0].degree_name}} สาขา : {{keyword.degree[0].degree_name}}</div> -->
+            <div>วุฒิการศึกษาสูงสุด : {{degreeSplit(keyword.degree[0].degree_name,0)}} สาขา : {{degreeSplit(keyword.degree[0].degree_name,1)}}</div>
             <div>สาขาที่เชี่ยวชาญ : 
               <label v-for="(keyword2, index2) in keyword.expertise" :key="index">
               {{ keyword2.expertise_name + ((index2+1)==keyword.expertise.length?'':', ')}}
@@ -496,6 +497,17 @@
   const btnExperti = ref('เพิ่มสาขาที่เชี่ยวชาญ');
   const btnExpertiVal = ref('');
   const btnSuccess = ref('เพิ่มเรียบร้อย');
+
+  const degreeNameFirstPart = computed(() => {
+  const degreeName = props.keyword.degree[0].degree_name;
+  return degreeName.split(' ')[0];
+});
+
+function degreeSplit(val,index)  {
+  console.log('degreeSplit',val);
+  const degreeName = val;
+  return degreeName.split(' ')[index];
+}
 
   function previewData() {
     console.log('previewData');
