@@ -427,7 +427,7 @@
           <tbody v-for="(keyword, index) in search_expertise" :key="index">
             <tr>
               <td>{{keyword.n.expertise_name}}</td>
-              <td><button class="btn btn-warning btn-sm" @click="expertiAddEdit('edit')">แก้ไข</button> <button class="btn btn-error btn-sm" @click="showSuccess('del')">ลบ</button></td>
+              <td><button class="btn btn-warning btn-sm" @click="expertiAddEdit('edit',keyword.n.expertise_name)">แก้ไข</button> <button class="btn btn-error btn-sm" @click="showSuccess('del');delete_expertise(keyword.n.expertise_name);">ลบ</button></td>
             </tr>
           </tbody>
         </table>
@@ -450,7 +450,7 @@
             ชื่อสาขาที่เชี่ยวชาญ
           </div>
           <div class="col-9">
-            <input type="text" id="add_expertise" name="add_expertise"  class="input input-bordered w-full shadow-none" placeholder="example" />
+            <input v-model="inputExpertiseOrder" type="text" id="add_expertise" name="add_expertise"  class="input input-bordered w-full shadow-none" placeholder="example" />
           </div>
         </div>
       </template>
@@ -497,6 +497,8 @@
   const btnExperti = ref('เพิ่มสาขาที่เชี่ยวชาญ');
   const btnExpertiVal = ref('');
   const btnSuccess = ref('เพิ่มเรียบร้อย');
+  const inputExpertiseOrder = ref('');
+  const inputExpertiseOld = ref('');
 
   const degreeNameFirstPart = computed(() => {
   const degreeName = props.keyword.degree[0].degree_name;
@@ -521,23 +523,33 @@ function degreeSplit(val,index)  {
     showModalExpertise.value = true;
   }
 
-  function expertiAddEdit(val) {
+  function expertiAddEdit(val,moretext='') {
     console.log('expertiAddEdit');
     btnExperti.value = 'เพิ่มสาขาที่เชี่ยวชาญ';
     btnExpertiVal.value = val;
+    inputExpertiseOrder.value = '';
+    inputExpertiseOld.value = moretext;
     if(val=='edit')
     {
+      inputExpertiseOrder.value = moretext;
       btnExperti.value = 'แก้ไขสาขาที่เชี่ยวชาญ';
     }
     showModalExpertise.value = false;
     showModalAddEdit.value = true;
   }
 
-  function showSuccess(val) {
-    console.log('expertiAddEdit');
+  async function showSuccess(val) {
+    console.log('expertiAddEdit',val);
+    console.log(inputExpertiseOrder.value);
+    console.log(inputExpertiseOld.value);
     btnSuccess.value = 'เพิ่มสาขาที่เชี่ยวชาญเรียบร้อย';
-    if(val=='edit')
+    if(val == 'add')
     {
+      await isOrderExpertiseAdd();
+    }
+    else if(val=='edit')
+    {
+      await edit_expertise(inputExpertiseOld.value,inputExpertiseOrder.value);
       btnSuccess.value = 'แก้ไขสาขาที่เชี่ยวชาญเรียบร้อย';
     }
     else if(val=='del')
@@ -1040,6 +1052,68 @@ const cancelForm = () => {
           console.log(error);
         }
       };
+
+      const add_expertise = async (expertise_name) => {
+          try {
+              const response = await axios.post(
+                  `${import.meta.env.VITE_FASTAPI}/add_expertise`,
+                  { expertise_name }, // Sending expertise_name in the request body
+                  {
+                      withCredentials: true,
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                  }
+              );
+              console.log('Added expertise:', response.data);
+              console.log('Added expertise id:', response.data.id);
+              await fetch_search_expertise();
+          } catch (error) {
+              console.log(error);
+          }
+      };
+
+      const edit_expertise = async (expertise_name, new_expertise_name) => {
+          try {
+              const response = await axios.put(
+                  `${import.meta.env.VITE_FASTAPI}/edit_expertise`,
+                  {
+                      expertise_name,
+                      new_expertise_name,
+                  },
+                  {
+                      withCredentials: true,
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                  }
+              );
+              console.log('Edited expertise:', response.data);
+              await fetch_search_expertise();
+          } catch (error) {
+              console.log(error);
+          }
+      };
+
+      const delete_expertise = async (expertise_name) => {
+        console.log('delete_expertise',expertise_name);
+          try {
+              const response = await axios.delete(
+                  `${import.meta.env.VITE_FASTAPI}/delete_expertise`,
+                  {
+                      data: { expertise_name: expertise_name }, // Sending expertise ID in the request body
+                      withCredentials: true,
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                  }
+              );
+              console.log('Deleted expertise:', response.data);
+              await fetch_search_expertise();
+          } catch (error) {
+              console.log(error);
+          }
+      };
   
       // ฟังก์ชันสำหรับเปิดหรือปิด dropdown
       const toggleDropdown = (authorIndex) => {
@@ -1086,9 +1160,17 @@ const cancelForm = () => {
   };
   // ฟังก์ชันเช็คสถานะของ checkbox ว่าถูกเลือกหรือไม่
   const isSelected = (authorIndex, expertiseName) => {
+    console.log('isSelected',authorIndex + ' : ' + expertiseName)
       return formData.value.authors[authorIndex].expertise.some(exp => exp.expertise_name === expertiseName);
   };
   
+  const isOrderExpertiseAdd = async () => {
+    console.log('isOrderExpertiseAdd',inputExpertiseOrder.value);
+    const expertise_name = inputExpertiseOrder.value;
+    console.log(formData.value.authors);
+    await add_expertise(expertise_name);
+    // author.expertise.push({ expertise_name: expertise_name });
+  }
   
   // แก้ไขฟังก์ชัน dropdownButtonText เพื่อให้ทำงานกับ Vue.js โดยใช้ function declaration
   function dropdownButtonText(index) {

@@ -109,6 +109,11 @@ def read_node_authors():
         raise HTTPException(status_code=404, detail="Node not found")
     return result
 
+# @app.post("/add_expertise")
+# async def generate_unique_id(name: Name):
+#     hashed_name = hashlib.sha256(name.name.encode()).hexdigest()
+#     return {"uniqueID": int(hashed_name, 16)}  # แปลงรหัสจากฐานสิบหก (hexadecimal) เป็นจำนวนเต็ม
+
 
 
 
@@ -902,6 +907,10 @@ class ImportExpertise(BaseModel):
     expertise_name: Optional[str] = None
     # id_e: str
 
+class ExpertiseEdit(BaseModel):
+    expertise_name: str
+    new_expertise_name: str
+
 class ImportAuthor(BaseModel):
     authorUrl: Optional[str] = None
     website: Optional[str] = None
@@ -1444,3 +1453,59 @@ async def delete_article(article_id: int):
         return {"message": "Article deleted successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+    
+
+@app.post("/add_expertise")
+async def create_expertise(expertise: ImportExpertise):
+    query = """
+    CREATE (n:Expertise {expertise_name: $expertise_name})
+    RETURN n, id(n) AS id
+    """
+    parameters = {"expertise_name": expertise.expertise_name}
+    result = neo4j_driver.run_query(query, parameters)
+    
+    if not result:
+        raise HTTPException(status_code=404, detail="Node not created")
+    
+    created_node = result[0]
+    return {
+        "node": dict(created_node["n"]),
+        "id": created_node["id"]
+    }
+
+@app.put("/edit_expertise")
+async def edit_expertise(expertise: ExpertiseEdit):
+    query = """
+    MATCH (n:Expertise {expertise_name: $expertise_name})
+    SET n.expertise_name = $new_expertise_name
+    RETURN n, id(n) AS id
+    """
+    parameters = {
+        "expertise_name": expertise.expertise_name,
+        "new_expertise_name": expertise.new_expertise_name
+    }
+    result = neo4j_driver.run_query(query, parameters)
+    
+    if not result:
+        raise HTTPException(status_code=404, detail="Node not found")
+    
+    updated_node = result[0]
+    return {
+        "node": dict(updated_node["n"]),
+        "id": updated_node["id"]
+    }
+
+@app.delete("/delete_expertise")
+async def delete_expertise(expertise: ImportExpertise):
+    query = """
+    MATCH (n:Expertise {expertise_name: $expertise_name})
+    DETACH DELETE n
+    RETURN COUNT(n) AS deleted_count
+    """
+    parameters = {"expertise_name": expertise.expertise_name}
+    result = neo4j_driver.run_query(query, parameters)
+    
+    if result[0]["deleted_count"] == 0:
+        raise HTTPException(status_code=404, detail="Node not found")
+    
+    return {"message": "Node deleted successfully"}
