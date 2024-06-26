@@ -376,7 +376,9 @@
           </div>
         </div>
         <div class="row" v-for="(keyword, index) in authorsDetail" :key="index">
-          <div class="col-2"><img src="../../assets/images/people.png" style="max-width: 100%;"</div>
+          <div class="col-2">
+            <img :src="keyword.pic_name ? keyword.pic_name : picdef" style="max-width: 100%;">
+          </div>
           <div class="col-10" style="border-bottom: black solid 1px;">
             <div><b>นักวิจัยคนที่ {{ index+1}}</b></div>
             <div>ชื่อ-นามสกุล (ภาษาไทย) : {{keyword.name_th?keyword.name_th:keyword.full_name}}</div>
@@ -501,6 +503,7 @@
   const inputExpertiseOld = ref('');
 
   const currentPublisher = ref('');
+  const picdef = ref('../../assets/images/people.png');
 
   const degreeNameFirstPart = computed(() => {
   const degreeName = props.keyword.degree[0].degree_name;
