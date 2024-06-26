@@ -355,7 +355,7 @@
           <div>ประเภทงานวิจัย : {{formData.content_type}}</div>
           <div>หมายเลขหน้า : {{formData.start_page}} - {{formData.end_page}}</div>
           <div>doi : {{formData.doi}}</div>
-          <div>แหล่งที่เผยแพร่ : {{formData.publisher}}</div>
+          <div>แหล่งที่เผยแพร่ : {{currentPublisher}}</div>
           <div>abstract_url : {{formData.abstract_url}}</div>
           <div>คำสำคัญ : 
             <label v-for="(keyword, index) in temporaryKeywords" :key="index">
@@ -499,6 +499,8 @@
   const btnSuccess = ref('เพิ่มเรียบร้อย');
   const inputExpertiseOrder = ref('');
   const inputExpertiseOld = ref('');
+
+  const currentPublisher = ref('');
 
   const degreeNameFirstPart = computed(() => {
   const degreeName = props.keyword.degree[0].degree_name;
@@ -889,14 +891,14 @@ const removeKeyword = index => {
     const publisher = () => {
       const PublisherInput = formData.value.publisher === 'อื่นๆ' ? otherPublisherInput.value : formData.value.publisher;
       return PublisherInput
-  };
+    };
 
 
-  const currentPublisher = publisher(); // เรียกใช้ฟังก์ชันเพื่อรับค่า PublisherInput
+  currentPublisher.value = publisher(); // เรียกใช้ฟังก์ชันเพื่อรับค่า PublisherInput
 
   // ตรวจสอบค่าที่ได้รับ
   // console.log(PublisherInput);
-  console.log('currentPublisher',currentPublisher);
+  // console.log('currentPublisher',currentPublisher);
 
    // รวม leveldegree เข้ากับ degree_name สำหรับนักวิจัยแต่ละคน
 
