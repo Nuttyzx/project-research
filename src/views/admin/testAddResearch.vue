@@ -570,38 +570,107 @@ function degreeSplit(val,index)  {
     console.log(val);
     if(val=='save')
     {
-      try {
-        const response = await axios.post(`${import.meta.env.VITE_FASTAPI}/form_import_data`, {
-            article_number: formData.value.article_number,
-            authors: formData.value.authors.map(author => {
-                return {
-                    authorUrl: author.authorUrl,
-                    website: author.website,
-                    pic_name: author.pic_name,
-                    full_name: author.full_name,
-                    country: author.country || '',
-                    degree: author.degree || [],
-                    email: author.email || '',
-                    expertise: author.expertise || [],
-                    name_th: author.name_th || '',
-                    office: author.office || '',
-                    province: author.province || '',
-                    id: author.id || null,
-                };
-            }),
-            content_type: formData.value.content_type,
-            doi: formData.value.doi || '',
-            end_page: formData.value.end_page || '',
-            publication_title: formData.value.publication_title,
-            publication_year: formData.value.publication_year.toString(),
-            publisher: currentPublisher,
-            start_page: formData.value.start_page || '',
-            title: formData.value.title,
-            abstract: formData.value.abstract,
-            keyword: formData.value.keyword,
-            abstract_url: formData.value.abstract_url
 
+      formData.value.authors.forEach((author, authorIndex) => {
+        const authorLevelDegree = leveldegree.value[authorIndex] || '';
+          author.degree = author.degree.map(deg => ({
+            degree_name: `${authorLevelDegree} ${deg.degree_name}`.trim()
+            
+          }));
+        console.log(formData.value.authors.degree)
+      });
+
+    
+    formData.value.authors.forEach((author) => {
+          author.expertise.forEach((exp) => {
+            oldExpertise.push(exp.expertise_name);
+          });
+      });
+
+      console.log('Old expertise:', oldExpertise);
+      
+      formData.value.authors.forEach((author, authorIndex) => {
+          otherExpertise.value[authorIndex].forEach((other) => {
+            if (other.otherExpertise_name) {
+              author.expertise.push({ expertise_name: other.otherExpertise_name });
+            }
+          });
         });
+        console.log('Combined expertise:', formData.value.authors);
+      
+
+      console.log('authors before',formData.value.authors)
+
+      authorsDetail.value =  formData.value.authors.map(author => {
+        return {
+            authorUrl: author.authorUrl,
+            website: author.website,
+            pic_name: author.pic_name,
+            full_name: author.full_name,
+            country: author.country || '',
+            degree: author.degree || [],
+            email: author.email || '',
+            expertise: author.expertise || [],
+            name_th: author.name_th || '',
+            office: author.office || '',
+            province: author.province || '',
+            id: author.id || null,
+        };
+      });
+      
+      // สร้างข้อมูลที่รวมข้อมูลทั้งสองส่วนไว้ก่อนที่จะส่งไปยัง API
+      formData.value.authors = formData.value.authors.concat(author_indatabase.value);
+
+      
+        
+      temporaryKeywords.value.forEach(tempKeyword => {
+        const newKeyword = tempKeyword.trim();
+            if (newKeyword !== '') {
+              if(formData.value.keyword == ''){
+                formData.value.keyword = newKeyword;
+              }
+              else{
+                formData.value.keyword += (formData.value.keyword === '') ? newKeyword : `,${newKeyword}`;
+              }   
+            }
+      });
+      console.log('keyword',formData.value.keyword);
+
+      const dataPost = {
+        article_number: formData.value.article_number,
+        authors: formData.value.authors.map(author => {
+            return {
+                authorUrl: author.authorUrl,
+                website: author.website,
+                pic_name: author.pic_name,
+                full_name: author.full_name,
+                country: author.country || '',
+                degree: author.degree || [],
+                email: author.email || '',
+                expertise: author.expertise || [],
+                name_th: author.name_th || '',
+                office: author.office || '',
+                province: author.province || '',
+                id: author.id || null,
+            };
+        }),
+        content_type: formData.value.content_type,
+        doi: formData.value.doi || '',
+        end_page: formData.value.end_page || '',
+        publication_title: formData.value.publication_title,
+        publication_year: formData.value.publication_year.toString(),
+        publisher: currentPublisher.value,
+        start_page: formData.value.start_page || '',
+        title: formData.value.title,
+        abstract: formData.value.abstract,
+        keyword: formData.value.keyword,
+        abstract_url: formData.value.abstract_url
+
+      };
+      const url_post = `${import.meta.env.VITE_FASTAPI}/form_import_data`;
+      console.log('dataPost ' + url_post + ' : ',dataPost);
+      try {
+        const response = await axios.post(url_post, dataPost);
         console.log("เพิ่มสำเร็จ");
         alert("เพิ่มข้อมูลสำเร็จ");
         console.log(formData.value);
@@ -899,130 +968,28 @@ const removeKeyword = index => {
 
   currentPublisher.value = publisher(); // เรียกใช้ฟังก์ชันเพื่อรับค่า PublisherInput
 
-  // ตรวจสอบค่าที่ได้รับ
-  // console.log(PublisherInput);
-  // console.log('currentPublisher',currentPublisher);
+  console.log('authors before',formData.value.authors)
 
-   // รวม leveldegree เข้ากับ degree_name สำหรับนักวิจัยแต่ละคน
+  authorsDetail.value =  formData.value.authors.map(author => {
+    return {
+        authorUrl: author.authorUrl,
+        website: author.website,
+        pic_name: author.pic_name,
+        full_name: author.full_name,
+        country: author.country || '',
+        degree: author.degree || [],
+        email: author.email || '',
+        expertise: author.expertise || [],
+        name_th: author.name_th || '',
+        office: author.office || '',
+        province: author.province || '',
+        id: author.id || null,
+    };
+  });
 
-  
-   formData.value.authors.forEach((author, authorIndex) => {
-      const authorLevelDegree = leveldegree.value[authorIndex] || '';
-        author.degree = author.degree.map(deg => ({
-          degree_name: `${authorLevelDegree} ${deg.degree_name}`.trim()
-          
-        }));
-      console.log(formData.value.authors.degree)
-    });
 
-//   formData.value.authors.forEach((author, authorIndex) => {
-//     const authorLevelDegree = leveldegree.value[authorIndex] || '';
-//     author.degree = author.degree.map(deg => ({
-//         degree_name: [authorLevelDegree, deg.degree_name].reduce((acc, curr) => acc ? `${acc} ${curr}` : curr, '').trim()
-//     }));
-// });
-
-   
-   formData.value.authors.forEach((author) => {
-        author.expertise.forEach((exp) => {
-          oldExpertise.push(exp.expertise_name);
-        });
-    });
-
-    console.log('Old expertise:', oldExpertise);
+  previewData();
     
-    formData.value.authors.forEach((author, authorIndex) => {
-        otherExpertise.value[authorIndex].forEach((other) => {
-          if (other.otherExpertise_name) {
-            author.expertise.push({ expertise_name: other.otherExpertise_name });
-          }
-        });
-      });
-      console.log('Combined expertise:', formData.value.authors);
-    
-
-    console.log('authors before',formData.value.authors)
-
-    authorsDetail.value =  formData.value.authors.map(author => {
-      return {
-          authorUrl: author.authorUrl,
-          website: author.website,
-          pic_name: author.pic_name,
-          full_name: author.full_name,
-          country: author.country || '',
-          degree: author.degree || [],
-          email: author.email || '',
-          expertise: author.expertise || [],
-          name_th: author.name_th || '',
-          office: author.office || '',
-          province: author.province || '',
-          id: author.id || null,
-      };
-    });
-    
-    // สร้างข้อมูลที่รวมข้อมูลทั้งสองส่วนไว้ก่อนที่จะส่งไปยัง API
-    formData.value.authors = formData.value.authors.concat(author_indatabase.value);
-
-    
-      
-    temporaryKeywords.value.forEach(tempKeyword => {
-       const newKeyword = tempKeyword.trim();
-          if (newKeyword !== '') {
-             if(formData.value.keyword == ''){
-              formData.value.keyword = newKeyword;
-             }
-             else{
-              formData.value.keyword += (formData.value.keyword === '') ? newKeyword : `,${newKeyword}`;
-             }   
-          }
-    });
-    console.log('keyword',formData.value.keyword);
-    // console.log('formData authorsDetail',authorsDetail);
-
-    previewData();
-    
-    // try {
-    //     const response = await axios.post(`${import.meta.env.VITE_FASTAPI}/form_import_data`, {
-    //         article_number: formData.value.article_number,
-    //         authors: formData.value.authors.map(author => {
-    //             return {
-    //                 authorUrl: author.authorUrl,
-    //                 website: author.website,
-    //                 pic_name: author.pic_name,
-    //                 full_name: author.full_name,
-    //                 country: author.country || '',
-    //                 degree: author.degree || [],
-    //                 email: author.email || '',
-    //                 expertise: author.expertise || [],
-    //                 name_th: author.name_th || '',
-    //                 office: author.office || '',
-    //                 province: author.province || '',
-    //                 id: author.id || null,
-    //             };
-    //         }),
-    //         content_type: formData.value.content_type,
-    //         doi: formData.value.doi || '',
-    //         end_page: formData.value.end_page || '',
-    //         publication_title: formData.value.publication_title,
-    //         publication_year: formData.value.publication_year.toString(),
-    //         publisher: currentPublisher,
-    //         start_page: formData.value.start_page || '',
-    //         title: formData.value.title,
-    //         abstract: formData.value.abstract,
-    //         keyword: formData.value.keyword,
-    //         abstract_url: formData.value.abstract_url
-
-    //     });
-    //     console.log("เพิ่มสำเร็จ");
-    //     alert("เพิ่มข้อมูลสำเร็จ");
-    //     console.log(formData.value);
-    //     console.log(response.data);
-    //     saveFormData();
-    //     temporaryKeywords.value = [''];
-    // } catch (error) {
-    //     console.error("เกิดข้อผิดพลาดในการส่งข้อมูลไปยัง API:", error);
-    //     alert("ไม่สามารถเพิ่มข้อมูลได้");
-    // }
 }
 
 
