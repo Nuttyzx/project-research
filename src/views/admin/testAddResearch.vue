@@ -195,8 +195,8 @@
             </div>  -->
 
             <div class="sm:col-span-3 ">
-                <label class="block text-sm font-medium leading-6 text-gray-900">วุฒิการศึกษาสูงสุด</label>
-                <div class="flex items-center">
+              <label class="block text-sm font-medium leading-6 text-gray-900">วุฒิการศึกษาสูงสุด</label>
+              <div class="flex items-center">
                 <div class="sm:col-span-1">
                     <div class="mr-3">
                       <select v-model="leveldegree[index]"  :id="'leveldegree_' + index" :name="'leveldegree_' + index" class="select select-bordered w-full">
@@ -208,9 +208,14 @@
                     </div>
                     
                 </div>
-                <div  class="mt-5" v-if="author.degree && author.degree[index]">
-                    <input v-model="author.degree[index].degree_name" type="text" :id="'author.degree.degree_name_' + index"  class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา"/>
+                <div class="sm:col-span-1">
+                  <div  class="mt-5" >
+                    <input v-model="degreename[index]" type="text" :id="'author.degree.degree_name_' + index"  class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา"/>
                 </div>
+                </div>
+                <!-- <div  class="mt-5" v-if="author.degree && author.degree[index]">
+                    <input v-model="author.degree[index].degree_name" type="text" :id="'author.degree.degree_name_' + index"  class="input input-bordered w-full shadow-none mr-5 mb-5" placeholder="สาขา"/>
+                </div> -->
               </div>
             </div> 
             <!-- สาขาที่เชี่ยวชาญ -->
@@ -390,7 +395,7 @@
             <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div> -->
             <!-- <div>วุฒิการศึกษาสูงสุด : {{keyword.degree[0].degree_name}} สาขา : {{keyword.degree[0].degree_name}}</div> -->
             <!-- <div>วุฒิการศึกษาสูงสุด : {{degreeSplit(keyword.degree[0].degree_name,0)}} สาขา : {{degreeSplit(keyword.degree[0].degree_name,1)}}</div> -->
-            <div>วุฒิการศึกษาสูงสุด : {{leveldegree[index]}} สาขา : {{keyword.degree[0].degree_name}}</div>
+            <div>วุฒิการศึกษาสูงสุด : {{leveldegree[index]}} สาขา : {{degreename[index]}}</div>
             <div>สาขาที่เชี่ยวชาญ : 
               <label v-for="(keyword2, index2) in keyword.expertise" :key="index">
               {{ keyword2.expertise_name + ((index2+1)==keyword.expertise.length?'':', ')}}
@@ -572,17 +577,26 @@ function degreeSplit(val,index)  {
     if(val=='save')
     {
 
+      // formData.value.authors.forEach((author, authorIndex) => {
+      //   const authorLevelDegree = leveldegree.value[authorIndex] || '';
+      //     author.degree = author.degree.map(deg => ({
+      //       degree_name: `${authorLevelDegree} ${deg.degree_name}`.trim()
+            
+      //     }));
+      //   console.log(formData.value.authors.degree)
+      // });
       formData.value.authors.forEach((author, authorIndex) => {
         const authorLevelDegree = leveldegree.value[authorIndex] || '';
+        const authorDegreename = degreename.value[authorIndex] || '';
           author.degree = author.degree.map(deg => ({
-            degree_name: `${authorLevelDegree} ${deg.degree_name}`.trim()
+            degree_name: `${authorLevelDegree} ${authorDegreename}`.trim()
             
           }));
-        console.log(formData.value.authors.degree)
+        console.log(formData.value.authors)
       });
 
     
-    formData.value.authors.forEach((author) => {
+      formData.value.authors.forEach((author) => {
           author.expertise.forEach((exp) => {
             oldExpertise.push(exp.expertise_name);
           });
@@ -693,6 +707,7 @@ function degreeSplit(val,index)  {
   const router = useRouter();
 
   const leveldegree = ref([]);
+  const degreename = ref([]);
 
   const formData = ref({
     abstract_url: '',
@@ -987,7 +1002,6 @@ const removeKeyword = index => {
         id: author.id || null,
     };
   });
-
 
   previewData();
     
