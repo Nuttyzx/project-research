@@ -389,7 +389,8 @@
             <!-- <div>วุฒิการศึกษาสูงสุด : ปริญญาเอก  สาขา : วิทยาการคอมพิวเตอร์</div>
             <div>สาขาที่เชี่ยวชาญ : Algorithms and Protocols , Computer Networks</div> -->
             <!-- <div>วุฒิการศึกษาสูงสุด : {{keyword.degree[0].degree_name}} สาขา : {{keyword.degree[0].degree_name}}</div> -->
-            <div>วุฒิการศึกษาสูงสุด : {{degreeSplit(keyword.degree[0].degree_name,0)}} สาขา : {{degreeSplit(keyword.degree[0].degree_name,1)}}</div>
+            <!-- <div>วุฒิการศึกษาสูงสุด : {{degreeSplit(keyword.degree[0].degree_name,0)}} สาขา : {{degreeSplit(keyword.degree[0].degree_name,1)}}</div> -->
+            <div>วุฒิการศึกษาสูงสุด : {{leveldegree[index]}} สาขา : {{keyword.degree[0].degree_name}}</div>
             <div>สาขาที่เชี่ยวชาญ : 
               <label v-for="(keyword2, index2) in keyword.expertise" :key="index">
               {{ keyword2.expertise_name + ((index2+1)==keyword.expertise.length?'':', ')}}
@@ -589,14 +590,14 @@ function degreeSplit(val,index)  {
 
       console.log('Old expertise:', oldExpertise);
       
-      formData.value.authors.forEach((author, authorIndex) => {
-          otherExpertise.value[authorIndex].forEach((other) => {
-            if (other.otherExpertise_name) {
-              author.expertise.push({ expertise_name: other.otherExpertise_name });
-            }
-          });
-        });
-        console.log('Combined expertise:', formData.value.authors);
+      // formData.value.authors.forEach((author, authorIndex) => {
+      //   otherExpertise.value[authorIndex].forEach((other) => {
+      //     if (other.otherExpertise_name) {
+      //       author.expertise.push({ expertise_name: other.otherExpertise_name });
+      //     }
+      //   });
+      // });
+      // console.log('Combined expertise:', formData.value.authors);
       
 
       console.log('authors before',formData.value.authors)
